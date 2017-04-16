@@ -19,7 +19,6 @@
     "jquery-ui": "1.10.1",
     "jstz": "*",
     "list-view": "rondale-sc/list-view-dist",
-    "loader.js": "stefanpenner/loader.js#1.0.1",
     "lodash": "3.10.1",
     "moment": "2.18.1",
     "moment-timezone": "~0.2.5",
