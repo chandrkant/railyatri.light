@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
   filterResultData: function(posts,hours){
 
   	var filteredJson = posts.filter(function (row) {
-  		var time = moment(row.eta).isBetween(moment().format(),moment().add(hours,'hours').format())
+  	var time = moment(row.eta).isBetween(moment().format(),moment().add(hours,'hours').format());
   
 	    	if(time) {
 	     	 return row;

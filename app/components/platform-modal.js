@@ -2,7 +2,7 @@ import Ember from 'ember';
 var $= Ember.$;
 export default Ember.Component.extend({
   actions: {
-    doSave(d, meta) {
+    doSave(d) {
       //d.reject();
       var gettime = new Date();
       $.ajax({
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
             app_id: "FOR_WEB_IGNORE_FOR_MOBILE" + gettime.getTime()
         },
         success: function(data) {
-          if (data.success == false) {
+          if (data.success === false) {
             alertify.error("something went wrong, please try in some time");
             d.resolve();
           }

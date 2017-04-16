@@ -4,11 +4,12 @@ var search_list = [];
 var local_search_list = [];
 export default Ember.Component.extend({
 	 actions:{
-      clearInput: function(self,model,name){
+      clearInput: function(self,name){
         this.set('name',undefined);
         $("."+self).prev().prev().focus();
         $("."+self).prev().prev().val('');
         $("."+self).css('display', 'none');
+        console.log(name);
        }
      },
 	 didInsertElement: function() {
