@@ -56,7 +56,7 @@ export default Ember.Controller.extend({
               self.set('showRecent',false);
               self.set('filter',self.filterResultData(self.get('trainResult'),2));
 		          console.log(json); 
-		      	},error: function(e,r,d){
+		      	},error: function(e){
 		      		/* exported attrs, d,r */
               $('.search-train').button('reset');
               alertify.error(e);
