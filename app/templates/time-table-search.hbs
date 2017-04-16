@@ -1,0 +1,151 @@
+{{nav-bar title="Time Table" status=model}}
+<div class="container-fluid bgclr-wht shadow">
+    <div class="row" id="searchForm">
+      <div class="train-srch-block">
+      <form method="post" {{ action "getTimeTable" on="submit"}}>
+          <div class="col-xs-12">
+            <label>Train Number or Name</label>
+            {{train-picker model=model}}
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-xs-12 stn-srch-btn">
+            <button type="submit" class="btn btn-block search-train" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
+          </div>
+       </form>
+      </div>
+    </div>
+  </div>
+{{#if showRecent}}
+   <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="row">
+      <div class="search-hist-block">
+        <div class="col-xs-12">
+          <p class="hist-title">RECENT SEARCHES</p>
+        </div>
+        
+        <div class="sponsor-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-5 no-pad">
+            <p for="">12057 NEW DELHI - UNA HIMACHAL JAN SHATABDI EXPRESS</p>
+          </div>
+          <div class="col-xs-5 spon-text">
+            <p class="text-right">Sponsored</p>
+          </div>
+          <div class="col-xs-10 col-xs-offset-2">
+            <p class="spon-desc">
+              Get 20% Cashback using Phone Pe Wallet on bus booking. 
+              Max Cashback &#8377;200
+            </p>
+            <a href="#">Install Now</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if showResult}}
+    <div class="offer-block">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 offer-box">
+          <span id="offer-box-close" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;">x</span>
+          <p class="text-center">EXP PLATFORM NO. ARE INDICATIVE. RECHECK AT THE STATION
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid bgclr-wht">
+    <div class="row">
+      <div class="time-table-train-block">
+        <div class="col-xs-11">
+          <label>
+            <span>{{timeTableResult.train_number}} - </span>
+            {{!-- <span>NEW DELHI - </span> --}}
+            <span>{{timeTableResult.train_name}}</span>
+          </label>
+          <p>
+            <span>{{firstRout.station_name}} ({{firstRout.station_code}})</span>
+            <img src="/assets/images/arrow-next.png" alt="ry direction icon" class="direction">
+            <span>{{lastRoute.station_name}} ({{lastRoute.station_code}})</span>
+          </p>
+          <p class="time-table-duration">
+            <img src="/assets/images/empty-state-no-history.png" alt="ry clock icon">
+            <span>{{sta-time firstRout.std_min lastRoute.sta_min true}}</span>
+          </p>
+        </div>
+        <div class="col-xs-1"><i class="fa fa-pencil" {{action 'editForm'}} ></i></div>
+      </div>
+    </div>
+  </div>
+    <div class="container-fluid bgclr-wht margin-top-15">
+    <ul class="timeline">
+    {{#each timeTableResult.route as |timetable|}}
+     {{#if timetable.stop}}
+     {{run-day timetable this}}
+      <li>
+        <div class="timeline-badge">
+          <i class="fa fa-clock-o"></i>
+        </div>
+        <div class="timeline-panel col-xs-3 no-pad">
+          <div class="timeline-heading text-right">
+            <h4 class="timeline-title">{{timetable.station_code}}</h4>
+            <p>Start at {{sta-time timetable.std_min timetable.sta_min false}}</p>
+            <p>{{timetable.distance_from_source}} km</p>
+          </div>
+        </div>
+        <div class="panel-right">
+          <div class="col-xs-6">
+            <label>{{timetable.station_name}}</label>
+            <p class="arvl-ontime">Mostly Ontime</p>
+            <div class="dropdown">
+              <button class="dropdown-toggle" type="button" id="dropdownMenuButton" {{action "toggleShow" timetable}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Platform #{{timetable.platform_number}}
+                <span class="caret"></span>
+                </button>
+            </div>
+          </div>
+          <div class="col-xs-6 text-right">
+           {{#if timetable.addition_info.food_available}}
+            <img src="/assets/images/food.png" alt="RY food icon">
+           {{/if}}
+           {{#if timetable.addition_info.hospital}}
+            <img src="/assets/images/icon-short-stays.png" alt="RY Short stay icon">
+           {{/if}} 
+          </div>
+        </div>
+      </li>
+      {{/if}}
+      {{/each}}
+      <li class="cust-ads">
+        <div class="timeline-badge info">
+          <i class="fa fa-clock-o"></i>
+        </div>
+        <div class="timeline-panel col-xs-3 no-pad">
+          <div class="timeline-heading text-right">
+            <p class="timeline-title">Sponsored</p>
+          </div>
+        </div>
+        <div class="panel-right">
+          <div class="col-xs-12">
+            <label>PHONE PE</label>
+            <p>
+              Get 20% Cashback using Phone Pe Wallet on bus booking. Max Cashback &#8377;200.
+            </p>
+            <a href="#">INSTALL NOW</a>
+          </div>          
+        </div>
+      </li>
+    </ul>
+     </div>
+    {{/if}}
+    <div class="row">
+    <div class="col-md-12">
+          {{platform-modal isVisible=showMyModal platformData = platformData}} 
+    </div>
+   </div>  
+

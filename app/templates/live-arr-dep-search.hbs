@@ -1,0 +1,178 @@
+{{nav-bar title="Live Arr/Dep" status=model}}
+<div class="container-fluid bgclr-wht shadow">
+    <div class="row" id="searchForm">
+      <div class="stn-search-block">
+        <form method="post" {{ action "getTrains" on="submit"}}>
+          <div class="col-xs-12">
+            <label>From Station</label>
+            {{station-picker name=model.fromCode model=model}}
+          </div>
+          <div class="col-xs-12">
+            <label>To Station</label>
+            {{station-picker name=model.toCode model=model}}
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-xs-12 stn-srch-btn">
+            <button type="submit" class="btn btn-block search-train" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>
+   {{#if showRecent}}
+  <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="row">
+      <div class="search-hist-block">
+        <div class="col-xs-12">
+          <p class="hist-title">RECENT SEARCHES</p>
+        </div>
+        <div class="search-hist-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">NDLS</label>
+            <p>NEW DELHI</p>
+            <p>03/15/17</p>
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/images/arrow-next.png" alt="arrow icon" class="img-responsive direction">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">CDG</label>
+            <p>CHANDIGARH</p>
+          </div>
+          <div class="col-xs-2">
+            <a href="javascript:void(0);">
+              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
+            </a>
+          </div>
+        </div>
+        <div class="search-hist-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">NDLS</label>
+            <p>NEW DELHI</p>
+            <p>03/15/17</p>
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/images/arrow-next.png" alt="arrow icon" class="img-responsive direction">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">CDG</label>
+            <p>CHANDIGARH</p>
+          </div>
+          <div class="col-xs-2">
+            <a href="javascript:void(0);">
+              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
+            </a>
+          </div>
+        </div>
+        <div class="sponsor-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-5 no-pad">
+            <label for="">Phone Pe</label>
+          </div>
+          <div class="col-xs-5 spon-text">
+            <p class="text-right">Sponsored</p>
+          </div>
+          <div class="col-xs-10 col-xs-offset-2">
+            <p class="spon-desc">
+              Get 20% Cashback using Phone Pe Wallet on bus booking. 
+              Max Cashback &#8377;200
+            </p>
+            <a href="#">Install Now</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if showResult}}
+  <div class="offer-block">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 offer-box">
+          <span id="offer-box-close" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;">x</span>
+          <p class="text-center">EXP PLATFORM NO. ARE INDICATIVE. RECHECK AT THE STATION
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bgclr-wht">
+    <div class="row">
+      <div class="train-inpt-block text-center">
+        <div class="col-xs-4">
+          <label class="text-left">{{model.fromCode}} </label>
+        </div>
+        <div class="col-xs-2">
+          <img src="/assets/images/arrow-next.png" alt="railyatri arrow next station" class="direction">
+        </div>
+        <div class="col-xs-4">
+          <label class="text-right">{{model.toCode}}</label>
+        </div>
+        <div class="col-xs-2"><i class="fa fa-pencil" {{action 'editForm'}} ></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="train-result-block">
+      <div class="row divider">
+        <div class=" train-result-head">
+          <div class="col-xs-8">
+            <label for="">TRAINS</label>
+          </div>
+          <div class="col-xs-4 text-right">
+            <div class="dropdown-2"> 
+              <button class="dropdown-toggle" type="button" data-toggle="dropdown" >Next 2hrs
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a href="#" {{action "filterResult" 2}} >2hrs</a></li>
+                <li><a href="#" {{action "filterResult" 4}} >4hrs</a></li>
+                <li><a href="#" {{action "filterResult" 6}}>6hrs</a></li>
+                <li><a href="#" {{action "filterResult" 8}}>8hrs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{#each filter as |train|}}
+      <div class="row">
+        <div class="trn-rslt-show divider">
+          <div class="col-xs-12">
+            <p><span>{{train.number}}</span> - <span>{{train.name}}</span></p>
+          </div>
+          <div class="col-xs-4 eta-time">
+            <p>Eta: <span>{{eta-time train.eta}}</span></p>
+          </div>
+          <div class="col-xs-4 sta-time">
+            <p>Sta: <span>{{eta-time train.sta}}</span></p>
+          </div>
+          <div class="col-xs-4 on-time text-right">
+            <p>{{late-time train.delay_arr}}</p>
+          </div>
+          <div class="col-xs-12 pltf">
+            <div class="dropdown-2">
+              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #{{train.platform_number}}
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a href="#">Platform #1</a></li>
+                <li><a href="#">Platform #1</a></li>
+                <li><a href="#">Platform #1</a></li>
+              </ul>
+            </div>
+          </div>
+         </div>
+        </div>
+       {{/each}} 
+       </div>
+      </div>
+
+  {{/if}}

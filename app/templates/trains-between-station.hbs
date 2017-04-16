@@ -1,0 +1,98 @@
+{{nav-bar title="Train Between Station" status=model}}
+<div class="container-fluid bgclr-wht shadow">
+    <div class="row">
+      <div class="stn-search-block">
+        <form>
+          <div class="col-xs-12">
+            <label>From Station</label>
+            {{station-picker name=model.fromCode model=model}}
+            {{!-- {{input type=text name="fromCode" class="stationpicker" placeholder="Enter Name or Code"}} --}}
+            {{!-- <input type="text" name="" placeholder="Enter Name or Code"> --}}
+          </div>
+          <div class="col-xs-12">
+            <label>To Station</label>
+            {{station-picker name=model.toCode model=model}}
+            {{!-- {{input type=text name= "toCode" class="stationpicker" placeholder="Enter Name or Code"}} --}}
+            {{!-- <input type="text" name="" placeholder="Enter Name or Code"> --}}
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-xs-12 stn-srch-btn">
+            <button type="submit" class="btn btn-block search-train" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="row">
+      <div class="search-hist-block">
+        <div class="col-xs-12">
+          <p class="hist-title">RECENT SEARCHES</p>
+        </div>
+        <div class="search-hist-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">NDLS</label>
+            <p>NEW DELHI</p>
+            <p>03/15/17</p>
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/images/arrow-next.png" alt="arrow icon" class="img-responsive direction">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">CDG</label>
+            <p>CHANDIGARH</p>
+          </div>
+          <div class="col-xs-2">
+            <a href="javascript:void(0);">
+              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
+            </a>
+          </div>
+        </div>
+        <div class="search-hist-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">NDLS</label>
+            <p>NEW DELHI</p>
+            <p>03/15/17</p>
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/images/arrow-next.png" alt="arrow icon" class="img-responsive direction">
+          </div>
+          <div class="col-xs-3 no-pad">
+            <label for="">CDG</label>
+            <p>CHANDIGARH</p>
+          </div>
+          <div class="col-xs-2">
+            <a href="javascript:void(0);">
+              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
+            </a>
+          </div>
+        </div>
+        <div class="sponsor-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-5 no-pad">
+            <label for="">Phone Pe</label>
+          </div>
+          <div class="col-xs-5 spon-text">
+            <p class="text-right">Sponsored</p>
+          </div>
+          <div class="col-xs-10 col-xs-offset-2">
+            <p class="spon-desc">
+              Get 20% Cashback using Phone Pe Wallet on bus booking. 
+              Max Cashback &#8377;200
+            </p>
+            <a href="#">Install Now</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>

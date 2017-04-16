@@ -1,0 +1,12 @@
+{{#bootstrap-modal isVisible=isVisible title="Change Platform" }}
+      {{input type="hidden" id="form_train_number" name="form[train_number]" value = platformData.train_number }}
+      {{input type="hidden" id="form_station_code" name="form[station_code]" value = platformData.dataPlatForm.station_code class="form-control"}}
+      {{input type="text" id="form_platform_number" name="form[platform_number]" value = platformData.dataPlatForm.platform_number class="form-control"}}
+			<div class="" id="modal-cust-plat">
+		    <div class="alert alert-success fade in message-info" style="display: none;">
+	        <a href="#" class="close" data-dismiss="alert">&times;</a>
+	        <span id="message-info"></span>
+        </div>
+	    </div>
+{{/bootstrap-modal}}
+
