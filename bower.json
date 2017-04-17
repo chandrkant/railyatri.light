@@ -2,7 +2,6 @@
   "name": "railyatri",
   "dependencies": {
     "ember": "~2.8.0",
-    "ember-data": "^2.8.0",
     "ember-cli-shims": "0.1.1",
     "antiscroll": "*",
     "bootstrap": "^3.3.7",
@@ -39,7 +38,6 @@
     "ember-cli-shims": "0.0.3",
     "ember-cli-shims": "0.1.1",
     "loader.js": "~3.2.0",
-    "ember-data": "^2.8.0",
     "jquery": "2.2.4",
     "lodash": "~2.4.1",
     "qunit": "1.17.1",
