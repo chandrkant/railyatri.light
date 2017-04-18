@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 			}else{
 			train_number =train_number.split('-')[0];
 			$.ajax({
-        	url: 'http://test.railyatri.in/m/schedule/'+train_number.trim()+'.json?stop=true',
+        	url: 'https://food1.railyatri.in/m/schedule/'+train_number.trim()+'.json?stop=true',
         	dataType: 'jsonp',
         	success: function (json) {
         	  $("#searchForm").slideToggle();	

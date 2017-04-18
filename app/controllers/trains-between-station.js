@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
 				$('.search-train').button('reset');
 			}else{
 			$.ajax({
-		    	url: "http://test.railyatri.in/api/trains-between-station.json?from="+from_code+"&to="+to_code,
+		    	url: "https://food1.railyatri.in/api/trains-between-station.json?from="+from_code+"&to="+to_code,
 		    	dataType: 'jsonp',
 		    	success: function (json) {
 		    		$("#searchForm").slideToggle( "slow" );
