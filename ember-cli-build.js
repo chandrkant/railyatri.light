@@ -45,6 +45,7 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
 app.import('bower_components/multiselect/css/multi-select.css');
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+app.import('bower_components/bootstrap/js/dropdown.js');
 // Bootstrap form helper
 app.import('bower_components/bootstrap-formhelpers/dist/css/bootstrap-formhelpers.min.css');
 app.import('bower_components/bootstrap-formhelpers/dist/js/bootstrap-formhelpers.min.js');

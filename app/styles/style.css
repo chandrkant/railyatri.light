@@ -484,7 +484,7 @@ time, mark, audio, video {
 /************************* live-arr-result ends /********/
 
 .stn-search-block {
-  padding-top: 60px;
+  /*padding-top: 60px;*/
 }
 .stn-search-block form {
   margin: 1em 0;
