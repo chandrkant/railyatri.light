@@ -24,7 +24,7 @@ var countryImages= pickFiles('bower_components/bootstrap-formhelpers/dist/img', 
 
 var faFonts = pickFiles('bower_components/font-awesome/fonts', {
     srcDir: '/',
-    files: ['fontawesome-webfont.eot','fontawesome-webfont.ttf','fontawesome-webfont.svg','fontawesome-webfont.woff'],
+    files: ['fontawesome-webfont.eot','fontawesome-webfont.ttf','fontawesome-webfont.svg','fontawesome-webfont.woff','fontawesome-webfont.woff2'],
     destDir: '/fonts'
 });
 
