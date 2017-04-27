@@ -33,10 +33,8 @@ export default Ember.Controller.extend({
 				$('.search-train').button('reset');
 			}else{
 			train_number =train_number.split('-')[0];
-			$.ajax({
-        	url: 'https://food1.railyatri.in/m/schedule/'+train_number.trim()+'.json?stop=true',
-        	dataType: 'jsonp',
-        	success: function (json) {
+			var api = new RestClient('/api/time_table/'+train_number.trim());
+			api.get().then(function(json){
         	  $("#searchForm").slideToggle();	
         	  $('.search-train').button('reset');
 	          self.set('showResult',true);
@@ -46,9 +44,10 @@ export default Ember.Controller.extend({
 	          self.set('firstRout',tm.route[0]);
 	          self.set('lastRoute',tm.route[tm.route.length-1]);
 	          console.log(self.get('timeTableResult')); 
-          	}
+			},function(xhr) {
+	          $('.search-train').button('reset');   //XMLHtppRequest instance
+	          alertify.error(xhr);
       		});
-
 			}
 		}
 	}

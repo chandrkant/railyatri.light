@@ -26,6 +26,7 @@
     "broccoli-static-compiler": "^0.2.2",
     "ember-ajax": "^2.0.1",
     "ember-bootstrap-modal": "^3.0.0",
+    "ember-browserify": "1.1.13",
     "ember-cli": "2.8.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.6",
@@ -50,6 +51,7 @@
     "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1",
     "morgan": "^1.8.1",
+    "node-rest-client": "^3.1.0",
     "proxy-middleware": "^0.15.0"
   },
   "dependencies": {

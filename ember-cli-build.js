@@ -87,7 +87,7 @@ app.import('bower_components/pluralize/pluralize.js');
 app.import('bower_components/fakeLoader/fakeLoader.min.js');
 app.import('bower_components/fakeLoader/fakeLoader.css');
 
-
+app.import('bower_components/another-rest-client/rest-client.js');
 app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
   exports: {
     'ic-ajax': [

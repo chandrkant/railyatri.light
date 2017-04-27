@@ -29,7 +29,8 @@
     "ember-forms": "^0.6.0",
     "pluralize": "^4.0.0",
     "fakeLoader": "fakeloader#*",
-    "alertifyjs": "^1.0.11"
+    "alertifyjs": "^1.0.11",
+    "another-rest-client": "^0.3.2"
   },
   "resolutions": {
     "bootstrap": "^3.3.7",

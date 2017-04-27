@@ -48,7 +48,7 @@ function railsServer() {
   // process.env has environment vars in Node.
   var backend = process.env['RAILS_SERVER'];
   if (!backend) {
-    backend = 'http://test.railyatri.in';
+    backend = 'http://localhost:3000';
     console.log("No RAILS_SERVER set, defaulting to", backend);
   }
   else {

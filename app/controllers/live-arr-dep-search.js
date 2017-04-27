@@ -37,32 +37,27 @@ export default Ember.Controller.extend({
 				self.set('showResult',false);
 				$('.search-train').button('reset');
 			}else{
-			from_code = from_code.split('|')[1].trim();	
+			from_code = from_code.split('|')[0].trim();	
 			var to_code = self.get('model.toCode');
+			var api = '';
 			if(to_code=== undefined || to_code===""){
-        url = "https://livestatus.railyatri.in/api/train_at_station/"+from_code+"/8.json";
+        api = new RestClient('/api/live_arr_dep/'+from_code);
 			}else{
-				to_code = to_code.split('|')[1].trim();
-        url = "https://livestatus.railyatri.in/api/train_at_station/"+from_code+"/"+to_code+"/8.json";
+				to_code = to_code.split('|')[0].trim();
+        api = new RestClient('/api/live_arr_dep/'+from_code+"/"+to_code);
 			} 
-			$.ajax({
-		    	url: url,
-		    	dataType: 'jsonp',
-		    	success: function (json) {
-		    		$("#searchForm").slideToggle( "slow" );
-		    	  $('.search-train').button('reset');
-		          self.set('trainResult',json.all_trains);
-              self.set('showResult',true);
-              self.set('showRecent',false);
-              self.set('filter',self.filterResultData(self.get('trainResult'),2));
-		          console.log(json); 
-		      	},error: function(e){
-		      		/* exported attrs, d,r */
-              $('.search-train').button('reset');
-              alertify.error(e);
-		      	}
-	  		});
-
+			api.get().then(function(json){
+				$("#searchForm").slideToggle( "slow" );
+    	  $('.search-train').button('reset');
+          self.set('trainResult',json.all_trains);
+          self.set('showResult',true);
+          self.set('showRecent',false);
+          self.set('filter',self.filterResultData(self.get('trainResult'),2));
+          console.log(json); 
+			  },function(xhr) {
+          $('.search-train').button('reset');   //XMLHtppRequest instance
+          alertify.error(xhr);
+      }); 
 			}
 		}
 	}

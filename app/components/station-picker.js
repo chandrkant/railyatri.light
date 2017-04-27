@@ -82,7 +82,7 @@ function get_filter_list(data, term) {
         if (d.code.toLowerCase().search(term) >= 0 || d.name.toLowerCase().search(term) >= 0 ) {
             search_list.push({
                 label: d.name + ' | ' + d.code,
-                value: d.name + ' | ' + d.code,
+                value: d.code + ' | ' + d.name,
                 name: d.name.toLowerCase(),
                 code: d.code.toLowerCase()
 
