@@ -4,6 +4,7 @@
     "window",
     "moment",
     "alertify",
+    "RestClient",
     "-Promise"
   ],
   "browser": true,

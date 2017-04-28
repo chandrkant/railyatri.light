@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 		getTrains: function(){
 			var self = this;
 			$('.search-train').button('loading');
-			var from_code = self.get('model.fromCode')
+			var from_code = self.get('model.fromCode');
 			var to_code = self.get('model.toCode');
 			if(from_code && to_code){
 		  	from_code = from_code.split('|')[0].trim();	

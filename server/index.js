@@ -46,7 +46,9 @@ module.exports = function (app) {
 // Return RAILS_SERVER env var, or default to localhost:3000
 function railsServer() {
   // process.env has environment vars in Node.
+  console.log("-----------------------");
   var backend = process.env['RAILS_SERVER'];
+  console.log(backend);
   if (!backend) {
     backend = 'http://localhost:3000';
     console.log("No RAILS_SERVER set, defaulting to", backend);

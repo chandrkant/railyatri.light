@@ -29,7 +29,6 @@ export default Ember.Controller.extend({
 		},
 		getTrains: function(){
 			var self = this;
-			var url ="";
 			$('.search-train').button('loading');
 			var from_code = self.get('model.fromCode');
 			if(from_code===undefined || from_code===""){
