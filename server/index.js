@@ -47,7 +47,7 @@ module.exports = function (app) {
 function railsServer() {
   // process.env has environment vars in Node.
   console.log("-----------------------");
-  var backend = process.env['RAILS_SERVER'];
+  var backend = 'https://railyatrilight.herokuapp.com'; //process.env['RAILS_SERVER'];
   console.log(backend);
   if (!backend) {
     backend = 'http://localhost:3000';
