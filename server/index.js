@@ -27,34 +27,24 @@ module.exports = function (app) {
 
   // TODO - figure out why proxy option on ember server does not work and remove this
   // and proxy-middleware in package.json
-  var proxy = require('proxy-middleware');
-  var server = railsServer();
-  if (server === 'API_STUBS') {
-    console.log('API Stubs.');
-    routes.forEach(function (route) {
-      route(app);
-    });
-  }
-  else {
-    var apiEndpoint = server + '/api';
-    console.log('API:', apiEndpoint);
-    app.use('/api', proxy(require('url').parse(apiEndpoint)));
-  }
-
+  // var proxy = require('proxy-middleware');
+  var proxy = require('http-proxy-middleware');
+  var apiProxy = proxy('https://railyatrilight.herokuapp.com');
+  app.use('/api', apiProxy);
 };
 
 // Return RAILS_SERVER env var, or default to localhost:3000
-function railsServer() {
-  // process.env has environment vars in Node.
-  console.log("-----------------------");
-  var backend = 'https://railyatrilight.herokuapp.com'; //process.env['RAILS_SERVER'];
-  console.log(backend);
-  if (!backend) {
-    backend = 'http://localhost:3000';
-    console.log("No RAILS_SERVER set, defaulting to", backend);
-  }
-  else {
-    console.log('RAILS_SERVER is', backend);
-  }
-  return backend;
-}
+// function railsServer() {
+//   // process.env has environment vars in Node.
+//   console.log("-----------------------");
+//   var backend = process.env['RAILS_SERVER'];
+//   console.log(backend);
+//   if (!backend) {
+//     backend = 'http://localhost:3000';
+//     console.log("No RAILS_SERVER set, defaulting to", backend);
+//   }
+//   else {
+//     console.log('RAILS_SERVER is', backend);
+//   }
+//   return backend;
+// }
