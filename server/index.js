@@ -21,30 +21,12 @@ API_STUBS         : use the generated API stubs under /server/routes/api/.
 <everything else> : Use value+'/api' as the API endpoint.
  */
 module.exports = function (app) {
-  //To get PUTs and POSTs to work via the Proxy
-  // comment the following line
-  //app.use(bodyParser());
-
-  // TODO - figure out why proxy option on ember server does not work and remove this
-  // and proxy-middleware in package.json
-  // var proxy = require('proxy-middleware');
   var proxy = require('http-proxy-middleware');
-  var apiProxy = proxy('https://railyatrilight.herokuapp.com');
-  app.use('/api', apiProxy);
+  var apiProxy = proxy('/api', {
+    target: 'https://railyatrilight.herokuapp.com',
+    changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
+    logLevel: 'debug'
+  });
+  app.use(apiProxy);
 };
 
-// Return RAILS_SERVER env var, or default to localhost:3000
-// function railsServer() {
-//   // process.env has environment vars in Node.
-//   console.log("-----------------------");
-//   var backend = process.env['RAILS_SERVER'];
-//   console.log(backend);
-//   if (!backend) {
-//     backend = 'http://localhost:3000';
-//     console.log("No RAILS_SERVER set, defaulting to", backend);
-//   }
-//   else {
-//     console.log('RAILS_SERVER is', backend);
-//   }
-//   return backend;
-// }
