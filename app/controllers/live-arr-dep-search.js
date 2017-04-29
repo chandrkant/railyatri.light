@@ -1,6 +1,6 @@
 
 import Ember from 'ember';
-
+import config from 'railyatri/config/environment';
 var $ = Ember.$;
 export default Ember.Controller.extend({
 	trainResult:[],
@@ -40,10 +40,10 @@ export default Ember.Controller.extend({
 			var to_code = self.get('model.toCode');
 			var api = '';
 			if(to_code=== undefined || to_code===""){
-        api = new RestClient('/api/live_arr_dep/'+from_code);
+        api = new RestClient(config.RAILS_SERVER+'/api/live_arr_dep/'+from_code);
 			}else{
 				to_code = to_code.split('|')[0].trim();
-        api = new RestClient('/api/live_arr_dep/'+from_code+"/"+to_code);
+        api = new RestClient(config.RAILS_SERVER+'/api/live_arr_dep/'+from_code+"/"+to_code);
 			} 
 			api.get().then(function(json){
 				$("#searchForm").slideToggle( "slow" );

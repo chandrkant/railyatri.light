@@ -28,6 +28,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.RAILS_SERVER ="";
     ENV['ember-cli-styles-reloader'] = {
      animateChanges: true
     };
@@ -35,6 +36,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+    ENV.RAILS_SERVER ="";
     ENV.locationType = 'none';
     ENV['ember-cli-styles-reloader'] = {
      animateChanges: true
@@ -47,7 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.RAILS_SERVER ="https://railyatrilight.herokuapp.com";
   }
   
   return ENV;

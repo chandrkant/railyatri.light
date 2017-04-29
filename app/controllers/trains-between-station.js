@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+import config from 'railyatri/config/environment';
 var $ = Ember.$;
 export default Ember.Controller.extend({
 	trainResult:[],
@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
 			if(from_code && to_code){
 		  	from_code = from_code.split('|')[0].trim();	
 			  to_code = to_code.split('|')[0].trim();
-			  var  api = new RestClient('/api/train_bw_station/'+from_code+"/"+to_code);
+			  var  api = new RestClient(config.RAILS_SERVER+'/api/train_bw_station/'+from_code+"/"+to_code);
 			  api.get().then(function(json){
 					$('.search-train').button('reset');
         	$("#searchForm").slideToggle( "slow" );

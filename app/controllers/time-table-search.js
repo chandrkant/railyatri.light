@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from 'railyatri/config/environment';
 var $ = Ember.$;
 export default Ember.Controller.extend({
 	showMyModal: false,
@@ -33,7 +34,7 @@ export default Ember.Controller.extend({
 				$('.search-train').button('reset');
 			}else{
 			train_number =train_number.split('-')[0];
-			var api = new RestClient('/api/time_table/'+train_number.trim());
+			var api = new RestClient(config.RAILS_SERVER+'/api/time_table/'+train_number.trim());
 			api.get().then(function(json){
         	  $("#searchForm").slideToggle();	
         	  $('.search-train').button('reset');
