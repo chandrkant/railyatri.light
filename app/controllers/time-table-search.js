@@ -2,6 +2,7 @@ import Ember from 'ember';
 import config from 'railyatri/config/environment';
 var $ = Ember.$;
 export default Ember.Controller.extend({
+	title: "Time Table",
 	showMyModal: false,
 	platformData: [],
 	showResult: false,
@@ -21,7 +22,8 @@ export default Ember.Controller.extend({
 				dataPlatForm: dataP
 			};
 			this.set('platformData',platform);
-            this.set('showMyModal', !this.get('showMyModal'));
+			return this.send('openModal', 'modals.new', this.get('platformData'));
+            // this.set('showMyModal', !this.get('showMyModal'));
         },
 		getTimeTable: function(){
 			var self = this;

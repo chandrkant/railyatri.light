@@ -1,0 +1,18 @@
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5 class="modal-title">{{model.train_number}} {{model.train_name}}</h5>
+      </div>
+      <div class="modal-body">
+        {{yield}}
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-primary" {{action 'doSave'}} >SAVE</button>
+      </div>
+    </div>
+  </div>
+</div>

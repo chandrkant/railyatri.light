@@ -13,6 +13,14 @@ Router.map(function() {
   this.route('live-arr-dep-search');
   this.route('trains-between-station');
   this.route('time-table-search');
+
+  this.route('confirmation', function() {
+    this.route('new');
+  });
+
+  this.route('modals', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

@@ -1,4 +1,6 @@
 import Ember from 'ember';
-export default Ember.Route.extend({
+import RouteHistoryMixin from 'ember-cli-history-mixin/mixins/route-history';
+import ParentRouteMixin from 'ember-cli-history-mixin/mixins/parent-route';
+export default Ember.Route.extend(ParentRouteMixin,RouteHistoryMixin,{
 
 });

@@ -2,6 +2,7 @@ import Ember from 'ember';
 import config from 'railyatri/config/environment';
 var $ = Ember.$;
 export default Ember.Controller.extend({
+	title: "Train B/W Station",
 	trainResult:[],
 	showResult: false,
   showRecent: true,
