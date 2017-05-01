@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import config from 'railyatri/config/environment';
+var $ = Ember.$;
 export default Ember.Component.extend({
   actions: {
     ok: function() {
@@ -15,19 +16,19 @@ export default Ember.Component.extend({
             lat: "0.0",
             lng: "0.0",
             app_id: "FOR_WEB_IGNORE_FOR_MOBILE" + gettime.getTime()
-        }
+        };
       var api = new RestClient(config.RAILS_SERVER+'/api/instant_platform_update');
       api.post(platFormData).then(function(data){
         alertify.success("Thank you for your input! \n \n" + data.platform_update[0].msg);
-        Ember.$('.modal').modal('hide');
+        $('.modal').modal('hide');
       },function(xhr) {
-         alertify.error("something went wrong, please try in some time");
+         alertify.error("something went wrong, please try in some time"+xhr);
      });
     }
 
   },
   show: function() {
-    Ember.$('.modal').modal().on('hidden.bs.modal', function() {
+  $('.modal').modal().on('hidden.bs.modal', function() {
       this.sendAction('close');
     }.bind(this));
   }.on('didInsertElement')
