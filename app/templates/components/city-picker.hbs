@@ -1,2 +1,7 @@
-{{input type=text name=name class=class id=idName placeholder=placeholder}}
-{{input type='hidden' name=nameCode class="valid"  id=idCode}}
+{{#if first_form}}
+  {{input type=text name="from_city" class="form-control citysearch valid" id="from-city" placeholder="From City"}}
+  {{input type='hidden' name="from_code" class="valid"  id="from_code"}}
+{{else}}
+  {{input type=text name="to_city" class="form-control citysearchdest valid" id="to-city" placeholder="To City"}}
+  {{input type='hidden' name="to_code" class="valid"  id="to_code"}}
+{{/if}}

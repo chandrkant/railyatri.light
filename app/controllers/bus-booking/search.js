@@ -25,8 +25,8 @@ export default Ember.Controller.extend({
 	getBus: function(){
 	  var from_code= $("#from_code").val();
 	  var to_code= $("#to_code").val();
-	  var from_name= $("#from-name").val();
-	  var to_name= $("#to-name").val();
+	  var from_name= $("#from-city").val();
+	  var to_name= $("#to-city").val();
 	  var doj = $("#auto-dp").val();
 	  var num_of_pass = $("#french-hens").val();
 	  from_name = from_name.toLowerCase().split(' ').join('-');

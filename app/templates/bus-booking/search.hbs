@@ -9,7 +9,8 @@
 
     <div class="form-group">
      <div class="ui-widget">
-      {{city-picker nameCode=model.fromCode name=model.fromName model=model  idName="from-name" idCode = "from_code" class ="form-control citysearch valid" placeholder ="From City"}}
+
+      {{city-picker nameCode=model.fromCode name=model.fromName model=model first_form = true}}
     </div>
 
     </div>
@@ -17,7 +18,7 @@
     <div class="form-group">
 
     <div class="ui-widget">
-      {{city-picker nameCode=model.toCode name=model.toName model=model idName="to-name" idCode = "to_code" class="form-control citysearchdest valid" placeholder ="To City"}}
+      {{city-picker nameCode=model.toCode name=model.toName model=model first_form = false}}
     </div>
     </div>
 
