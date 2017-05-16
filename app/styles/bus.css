@@ -1,0 +1,423 @@
+#bus-search{
+    background-color: #fff7d3;
+}
+.gift-icon {
+    vertical-align: -webkit-baseline-middle;
+}
+.bus-ticket-offers {
+    
+}
+.cashback-title h5 {
+    color: #3cc300;
+    font-weight: 900;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.bb-last-row-blur{
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    filter: blur(20px);
+}
+#bus-offers-slider li {
+    padding: 20px;
+}
+.cashback-title p {
+    color: #737167;
+}
+.cashback-more a {
+    color: #1079d7;
+    font-weight: 600;
+}
+.cashback-code {
+    background-color: #fff;
+    margin-top: 10px;
+    border: 1px dotted #000;
+    border-radius: 5px;
+}
+.cashback-code p {
+    height: 35px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.exchange-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #777;
+    line-height: 40px;
+    text-align: center;
+    background: #eee;
+    position: absolute;
+    top: 80px;
+    right: 25px;
+}
+.marg-bottom-15{
+ margin-bottom: 15px;
+}
+div#bus-search-form {
+    background: #fff;
+    padding-top: 70px;
+}
+#bus-search img{
+    width: 100%;
+}
+
+/*.blockUI.blockMsg.blockElement {
+    width: 50%!important;
+    top: 24%!important;
+    left: 20%!important;
+}
+.blockUI.blockMsg.blockElement img{
+    width: 100%;
+}*/
+#bus-search-form .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.dec.button, .inc.button {
+    display: inline-block;
+    color: #404040;
+}
+#french-hens {
+    display: inline-block!important;
+    width: 40%!important;
+    text-align: center;
+}
+
+#bus-search-form span.input-group-btn input {
+    font-weight: 600;
+}
+.bus-search-label {
+    font-weight: normal;
+    color: #9a9a9a;
+    display: block;
+}
+.bus-rslides img {
+    height: 100%!important;
+}
+.container-bus-search{
+    font-family: Roboto, Helvetica, sans-serif;
+    min-height: 100%;
+    background-size: 100%;
+    /*position: fixed;*/
+}
+
+/*.bus-rslides{
+    margin-top: 30px;
+}*/
+
+.bgclr-white {
+    background-color: #fff;
+}
+.no-pad {
+    padding: 0 !important;
+}
+.m-ticket-icon img {
+    vertical-align: bottom;
+}
+
+.travel-info {
+    padding-top: 30px;
+    color: #9b9b9b;
+    border-bottom: 1px solid #8a8a8a;
+}
+.travel-more-details a {
+    line-height: 3;
+    color: #2196f3;
+    /*font-size: 2.5em;*/
+}
+.travel-more-details a:focus, .travel-more-details a:hover {
+    text-decoration: none;
+}
+.trip-info {
+    clear: both;
+    border-bottom: 1px solid #8a8a8a;
+}
+.more-boarding-info {
+    border-bottom: 1px solid #8a8a8a;
+}
+.more-boarding-info p:nth-child(2) {
+    color: #424242;
+    margin-bottom: 0.5em;
+}
+
+.passenger-info {
+    margin: 0.5em 0;
+}
+.passenger-details div:nth-child(2) p {
+    color: #424242;
+}
+.passenger-details div p:nth-child(1) {
+    margin-top: 1em;
+}
+.passenger-details div p:nth-child(3) {
+    margin-bottom: 1em;
+}
+.passenger-info p, .passenger-info span {
+    /*font-size: 2.5em;*/
+    color: #767676;
+}
+.passenger-info label {
+    /*font-size: 3.5em;*/
+    display: block;
+}
+.passenger-info img {
+    /*min-height: 4em;*/
+}
+
+#bus-review {
+    background: #eee;
+}
+.origin, .duration {
+    float: left;
+    display: block;
+}
+.duration img {
+    height: 21px;
+}
+.destination {
+    float: right;
+    display: block;
+}
+.origin p, .duration p, .destination p{
+    color: #767676;
+    display: block;
+}
+.fare-info {
+    margin-top: .5em;
+}
+.fare-details {
+    padding: 1em;
+}
+.fare-details p {
+    /*font-size: 2.5em;*/
+    color: #424242;
+}
+.m-wallet {
+    padding: 1em;
+    border-top: 1px solid #8a8a8a;
+    border-bottom: 1px solid #8a8a8a;
+}
+.m-wallet p {
+    /*font-size: 2.5em;*/
+}
+.m-wallet input {
+    width: 1em;
+    height: 1em;
+    /*margin-right: .5em;*/
+}
+.m-wallet span {
+    margin-left: 10px;
+}
+.m-wallet .custom-checkbox {
+    position: static;
+}
+.fare-total {
+    padding: 1em;
+}
+.fare-total label {
+    font-weight: 700;
+    color: #424242;
+    /*font-size: 3.5em;*/
+    display: block;
+}
+
+.coupon-sect {
+    padding: 1em;
+    margin-top: 1.5em;
+    /*border-bottom: 1px solid #8a8a8a;*/
+}
+.coupon-sect p,.coupon-sect ul li {
+    /*font-size: 2.5em;*/
+    color: #9b9b9b;
+}
+.coupon-sect span {
+    font-weight: 600;
+}
+.coupon-sect ul li{
+    list-style-type: none;
+}
+.coupon-sect p:nth-child(2) {
+    color: #3cc300;
+}
+
+.coupon-sect a:focus, .coupon-sect a:hover {
+    text-decoration: none;
+}
+
+.cashback-offer-btn {
+    /*font-size: 2.5em;*/
+    color: #2196f3;
+}
+.cashback-offer-btn:focus, .cashback-offer-btn:hover {
+    text-decoration: none;
+    color: #2196f3;
+}
+.cashback-offers {
+    background-color: #fff7d3;
+    border-bottom: 1px solid #767676;
+    padding: 1em 0;
+}
+
+.cashback-sect {
+    padding: 1em;
+}
+.cashback-sect img {
+    /*width: 12em;*/
+    margin-left: 2em;
+}
+.cashback-sect p {
+    /*font-size: 2.5em;*/
+    color: #9b9b9b;
+}
+#bus-review a {
+    color: #1079d7;
+}
+
+
+#offers-list .bgclr-grey {
+    background-color: #eee;
+}
+#offers-list .bgclr-white {
+    background-color: #fff;
+}
+#offers-list .section {
+    padding: 30px 0;
+}
+#offers-list .no-pad {
+    padding: 0 !important;
+}
+#offers-list .coupon-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#offers-list .coupon-info {
+    background-color: #fff
+}
+#offers-list .coupon-info h2 {
+    color: #39b549;
+    border: 2px dashed #39b549;
+    background-color: #ebf8ec;
+    padding: 0.2em 0;
+    font-weight: 600;
+    margin: 20px 0px 10px 0px;
+}
+#offers-list .coupon-apply-btn {
+    margin-bottom: 1em;
+}
+
+#offers-list .coupon-info p:nth-child(2) {
+    color: #1079d7;
+    font-weight: 600;
+    font-size: 16px;
+}
+#offers-list .coupon-info p:nth-child(3) {
+    color: #212121;
+    font-weight: 600;
+}
+#offers-list .coupon-info p:nth-child(4) {
+    color: #757575;
+}
+#offers-list .valid-dt p {
+    color: #757575;
+}
+#offers-list .coupon-more-btn a {
+    color: #1079d7;
+    font-weight: 600;
+}
+#offers-list .coupon-more-btn a:focus, .coupon-more-btn a:hover {
+    text-decoration: none;
+}
+#offers-list .apply-btn {
+    background-color: #1079d7;
+    color: #fff;
+    border-radius: 2px;
+}
+#offers-list .apply-btn:focus, .apply-btn:hover {
+    background-color: #408bce;
+    color: #fff;
+}
+
+/****** Modal css *****/
+#offers-list .modal-dialog {
+    width: 300px;
+}
+
+.bb-1st-row {
+    background: #1079d7;
+    color: #fff;
+    padding: 5px;
+    position: relative;
+}
+.bb-1st-row .bb-1st-inner-1st {
+    font-size: 12px;
+}
+.bb-1st-row .bb-1st-inner-2nd {
+    font-size: 16px;
+}
+.edit-top-menu {
+    position: absolute;
+    right: 10px;
+    background: #1079d7;
+    padding: 7px 10px 7px 12px;
+    border-radius: 46px;
+    width: 36px;
+    display: block;
+    text-align: center;
+    top: 7px;
+}
+.row.bb-2nd-row {
+    background: #ddd;
+    padding: 10px 0px;
+}
+.main-row {
+    float: left;
+    width: 100%;
+    color: #6f6f6f !important;
+    border-bottom: solid 1px #d7d7d7;
+    padding: 15px 0px;
+}
+a.main-row {
+    color: #363636;
+}
+.heading-bus-mobile {
+    font-size: 18px;
+    color: #363636 !important;
+}
+.bus-time, .travels-details {
+    font-size: 12px;
+}
+.pull-right {
+   float: right !important;
+}
+.truncate-bus {
+    width: 230px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+}
+.bus-fare {
+    color: #1079d7;
+    font-family: roboto;
+}
+.tab-content{
+    padding-top: 51px;
+}

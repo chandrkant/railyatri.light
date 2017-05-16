@@ -1,0 +1,43 @@
+{{partial "navbar"  title="Live Arr/Dep"}}
+<div class="container-fluid bgclr-wht">
+<div class="tab-content clearfix">
+<div class="bb-fixed-row">
+  <div class="row bb-1st-row">
+    <div class="bb-1st-inner-1st text-center">{{responseData.from_name}} &rarr; {{responseData.to_name}}
+    </div>
+    <div class="bb-1st-inner-2nd" id="date_filters">
+      <!-- <span class="previous pull-left"><a href="/bus_bookings/bus-booking?from_code=&to_code=&doj=" data-remote="true"><i class="fa fa-angle-left" aria-hidden="true"></i></a></span> -->
+      <span class="next pull-right edit-top-menu" id="open"><i class="fa fa-pencil" aria-hidden="true" onclick=""></i></span>
+      <p class="month text-center">{{responseData.doj}} </p>
+
+    </div>
+  </div>
+
+  <div class="row bb-2nd-row text-center">
+    <div onclick="sort_function('duration',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4 "><i class="fa fa-clock-o" aria-hidden="true"></i> Duration <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
+    <div onclick="sort_function('deptime',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4"><i class="fa fa-flag-o" aria-hidden="true"></i> Dep Time <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
+    <div onclick="sort_function('fare',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4 default_sorted"><i class="fa fa-inr" aria-hidden="true"></i> Bus fare <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
+  </div>
+</div>
+ <div class="container-fluid bgclr-wht">
+ {{#each availableTrips as |trip| }}
+  <a class="main-row rippler rippler-inverse" data-duration="{{trip.durationTime}}" data-fare="{{trip.fareDetails.0.baseFare}}" data-deptime="{{trip.departure_time}}" href="/bus-booking/operator-detail/{{responseData.num_of_pass}}/{{trip.id}}/{{trip.operator}}">
+    <div class="row heading-bus-mobile">
+      <div class="col-xs-6 text-left dpitem"> {{trip.arrivalTime}} &rarr; {{trip.departureTime}}
+      {{#if trip.mTicketEnabled}}
+        <span class="m-ticket">M</span>
+       {{/if}}
+      </div>
+      <div class="col-xs-6 text-right bus-fare" >&#x20B9; {{trip.fareDetails.0.baseFare }}</div>
+    </div>
+    <div class="col-xs-6 bus-time"><i class="fa fa-clock-o" aria-hidden="true"></i> {{sta-time trip.durationTime}}</div>
+    <div class="col-xs-6 text-right number-seats">{{trip.availableSeats}} Seats</div>
+    <div class="col-xs-12 truncate-bus bus-travels">{{trip.travels}}</div>
+    <div class="row">
+      <div class="col-xs-12 text-left travels-details">{{trip.busType}}</div>
+    </div>
+  </a>
+  {{/each}}
+</div>
+</div>
+</div>

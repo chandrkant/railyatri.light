@@ -15,6 +15,9 @@ export default Ember.Route.extend(ParentRouteMixin,RouteHistoryMixin,{
         outlet: 'modal',
         parentView: 'application'
       });
+    },
+    drawer: function(){
+      Ember.$('.drawer').drawer();
     }
   }
 });

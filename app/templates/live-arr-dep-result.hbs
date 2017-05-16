@@ -1,0 +1,84 @@
+{{partial "navbar"  title="Live Arr/Dep"}}
+{{#if showResult}}
+  <div class="offer-block">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 offer-box">
+          <span id="offer-box-close" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;">x</span>
+          <p class="text-center">EXP PLATFORM NO. ARE INDICATIVE. RECHECK AT THE STATION
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bgclr-wht">
+    <div class="row">
+      <div class="train-inpt-block text-center">
+        <div class="col-xs-4">
+          <label class="text-left">{{model.fromCode}} </label>
+        </div>
+        <div class="col-xs-2">
+          <img src="/assets/images/arrow-next.png" alt="railyatri arrow next station" class="direction">
+        </div>
+        <div class="col-xs-4">
+          <label class="text-right">{{model.toCode}}</label>
+        </div>
+        <div class="col-xs-2"><i class="fa fa-pencil" {{action 'editForm'}} ></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="train-result-block">
+      <div class="row divider">
+        <div class=" train-result-head">
+          <div class="col-xs-8">
+            <label for="">TRAINS</label>
+          </div>
+          <div class="col-xs-4 text-right">
+            <div class="dropdown-2"> 
+              <button class="dropdown-toggle" type="button" data-toggle="dropdown" >Next 2hrs
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#" {{action "filterResult" 2}} >2hrs</a></li>
+                <li><a href="#" {{action "filterResult" 4}} >4hrs</a></li>
+                <li><a href="#" {{action "filterResult" 6}}>6hrs</a></li>
+                <li><a href="#" {{action "filterResult" 8}}>8hrs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{#each filter as |train|}}
+      <div class="row">
+        <div class="trn-rslt-show divider">
+          <div class="col-xs-12">
+            <p><span>{{train.number}}</span> - <span>{{train.name}}</span></p>
+          </div>
+          <div class="col-xs-4 eta-time">
+            <p>Eta: <span>{{eta-time train.eta}}</span></p>
+          </div>
+          <div class="col-xs-4 sta-time">
+            <p>Sta: <span>{{eta-time train.sta}}</span></p>
+          </div>
+          <div class="col-xs-4 on-time text-right">
+            <p>{{late-time train.delay_arr}}</p>
+          </div>
+          <div class="col-xs-12 pltf">
+            <div class="dropdown-2">
+              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #{{train.platform_number}}
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a href="#">Platform #1</a></li>
+                <li><a href="#">Platform #1</a></li>
+                <li><a href="#">Platform #1</a></li>
+              </ul>
+            </div>
+          </div>
+         </div>
+        </div>
+       {{/each}} 
+       </div>
+      </div>
+
+  {{/if}}

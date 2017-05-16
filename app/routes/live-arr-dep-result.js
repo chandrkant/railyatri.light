@@ -5,18 +5,21 @@ model: function(params) {
 Ember.$.blockUI({ css: { border: 'none',padding: '15px',backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: 0.5, color: '#fff' },
 	message:'<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'
 });
- var api = new RestClient(config.RAILS_SERVER+'/api/time_table/'+params.train_number);
+ var api = new RestClient(config.RAILS_SERVER+'/api/live_arr_dep/'+params.from_code.split('-')[0]+"/"+params.from_code.split('-')[1]);
  return api.get();
  },
  setupController: function (controller, model) {
- 	var tm = [];
- 	 controller.set('showResult',true);
+ 	if(model.success){
+   controller.set('trainResult',model.all_trains);
+	 controller.set('showResult',true);
 	 controller.set('showRecent',false);
-	 controller.set('timeTableResult',model[0]);
-	 tm = controller.get('timeTableResult');
-	 controller.set('firstRout',tm.route[0]);
-	 controller.set('lastRoute',tm.route[tm.route.length-1]);
+	 controller.set('filter',controller.filterResultData(controller.get('trainResult'),2));
 	 Ember.$.unblockUI();
-	 console.log(tm);
+ 	}else{
+   Ember.$.unblockUI();
+   alertify.error(model.message);
+   this.transitionTo('live-arr-dep-search');
+ 	}
+ 	
  }
 });

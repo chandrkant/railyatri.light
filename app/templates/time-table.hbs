@@ -1,5 +1,37 @@
-{{nav-bar title="Time Table" status=model}}
-<div class="offer-block">
+{{partial "navbar" title="Time Table"}}
+  {{#if showRecent}}
+   <div class="container-fluid bgclr-wht margin-top-15">
+    <div class="row">
+      <div class="search-hist-block">
+        <div class="col-xs-12">
+          <p class="hist-title">RECENT SEARCHES</p>
+        </div>
+        
+        <div class="sponsor-info">
+          <div class="col-xs-2">
+            <img src="/assets/images/list-icon-pnr.png" alt="History pnr icon" class="img-responsive">
+          </div>
+          <div class="col-xs-5 no-pad">
+            <p for="">12057 NEW DELHI - UNA HIMACHAL JAN SHATABDI EXPRESS</p>
+          </div>
+          <div class="col-xs-5 spon-text">
+            <p class="text-right">Sponsored</p>
+          </div>
+          <div class="col-xs-10 col-xs-offset-2">
+            <p class="spon-desc">
+              Get 20% Cashback using Phone Pe Wallet on bus booking. 
+              Max Cashback &#8377;200
+            </p>
+            <a href="#">Install Now</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if showResult}}
+    <div class="offer-block">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 offer-box">
@@ -10,178 +42,70 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid bgclr-wht">
+
+    <div class="container-fluid bgclr-wht">
     <div class="row">
-      <div class="train-inpt-block text-center">
-        <div class="col-xs-5">
-          <label class="text-left">NEW DELHI <span>(NDLS)</span></label>
+      <div class="time-table-train-block">
+        <div class="col-xs-11">
+          <label>
+            <span>{{timeTableResult.train_number}} - </span>
+            {{!-- <span>NEW DELHI - </span> --}}
+            <span>{{timeTableResult.train_name}}</span>
+          </label>
+          <p>
+            <span>{{firstRout.station_name}} ({{firstRout.station_code}})</span>
+            <img src="/assets/images/arrow-next.png" alt="ry direction icon" class="direction">
+            <span>{{lastRoute.station_name}} ({{lastRoute.station_code}})</span>
+          </p>
+          <p class="time-table-duration">
+            <img src="/assets/images/empty-state-no-history.png" alt="ry clock icon">
+            <span>{{sta-time firstRout.std_min lastRoute.sta_min true}}</span>
+          </p>
         </div>
-        <div class="col-xs-2">
-          <img src="/assets/images/arrow-next.png" alt="railyatri arrow next station" class="direction">
-        </div>
-        <div class="col-xs-5">
-          <label class="text-right">CHANDIGARH <span>(CDG)</span></label>
-        </div>
+        <div class="col-xs-1"><i class="fa fa-pencil" {{action 'editForm'}} ></i></div>
       </div>
     </div>
   </div>
-  <div class="container-fluid bgclr-wht margin-top-15">
-    <div class="train-result-block">
-      <div class="row divider">
-        <div class=" train-result-head">
-          <div class="col-xs-8">
-            <label for="">TRAINS</label>
-          </div>
-          <div class="col-xs-4 text-right">
-            <div class="dropdown-2"> 
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Next 2hrs
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">4hrs</a></li>
-                <li><a href="#">6hrs</a></li>
-                <li><a href="#">8hrs</a></li>
-              </ul>
-            </div>
+    <div class="container-fluid bgclr-wht margin-top-15">
+    <ul class="timeline">
+    {{#each timeTableResult.route as |timetable|}}
+     {{#if timetable.stop}}
+     {{run-day timetable this}}
+      <li>
+        <div class="timeline-badge">
+          <i class="fa fa-clock-o"></i>
+        </div>
+        <div class="timeline-panel col-xs-3 no-pad">
+          <div class="timeline-heading text-right">
+            <h4 class="timeline-title">{{timetable.station_code}}</h4>
+            <p>Start at {{sta-time timetable.std_min timetable.sta_min false}}</p>
+            <p>{{timetable.distance_from_source}} km</p>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="trn-rslt-show divider">
-          <div class="col-xs-12">
-            <p><span>12306</span> - <span>NEW DELHI</span> - <span>HOWRAH Rajdhani Exp (Via Patna)</span></p>
-          </div>
-          <div class="col-xs-4 eta-time">
-            <p>Eta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 sta-time">
-            <p>Sta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 on-time text-right">
-            <p>On Time</p>
-          </div>
-          <div class="col-xs-12 pltf">
-            <div class="dropdown-2">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #14
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-              </ul>
+        <div class="panel-right">
+          <div class="col-xs-6">
+            <label>{{timetable.station_name}}</label>
+            <p class="arvl-ontime">Mostly Ontime</p>
+            <div class="dropdown">
+              <button class="dropdown-toggle" type="button" id="dropdownMenuButton" {{action "toggleShow" timetable}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Platform #{{timetable.platform_number}}
+                <span class="caret"></span>
+                </button>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="trn-rslt-show divider">
-          <div class="col-xs-12">
-            <p><span>12306</span> - <span>NEW DELHI</span> - <span>HOWRAH Rajdhani Exp (Via Patna)</span></p>
-          </div>
-          <div class="col-xs-4 eta-time">
-            <p>Eta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 sta-time">
-            <p>Sta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 on-time text-right">
-            <p>On Time</p>
-          </div>
-          <div class="col-xs-12 pltf">
-            <div class="dropdown-2">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #14
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-              </ul>
-            </div>
+          <div class="col-xs-6 text-right">
+           {{#if timetable.addition_info.food_available}}
+            <img src="/assets/images/food.png" alt="RY food icon">
+           {{/if}}
+           {{#if timetable.addition_info.hospital}}
+            <img src="/assets/images/icon-short-stays.png" alt="RY Short stay icon">
+           {{/if}} 
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="trn-rslt-show divider">
-          <div class="col-xs-12">
-            <p><span>12306</span> - <span>NEW DELHI</span> - <span>HOWRAH Rajdhani Exp (Via Patna)</span></p>
-          </div>
-          <div class="col-xs-4 eta-time">
-            <p>Eta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 sta-time">
-            <p>Sta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 on-time text-right">
-            <p>On Time</p>
-          </div>
-          <div class="col-xs-12 pltf">
-            <div class="dropdown-2">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #14
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="trn-rslt-show divider">
-          <div class="col-xs-12">
-            <p><span>12306</span> - <span>NEW DELHI</span> - <span>HOWRAH Rajdhani Exp (Via Patna)</span></p>
-          </div>
-          <div class="col-xs-4 eta-time">
-            <p>Eta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 sta-time">
-            <p>Sta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 on-time text-right">
-            <p>On Time</p>
-          </div>
-          <div class="col-xs-12 pltf">
-            <div class="dropdown-2">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #14
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="trn-rslt-show divider">
-          <div class="col-xs-12">
-            <p><span>12306</span> - <span>NEW DELHI</span> - <span>HOWRAH Rajdhani Exp (Via Patna)</span></p>
-          </div>
-          <div class="col-xs-4 eta-time">
-            <p>Eta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 sta-time">
-            <p>Sta: <span>16:55</span></p>
-          </div>
-          <div class="col-xs-4 on-time text-right">
-            <p>On Time</p>
-          </div>
-          <div class="col-xs-12 pltf">
-            <div class="dropdown-2">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">Platform #14
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-                <li><a href="#">Platform #1</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      </li>
 
-    </div>
-
-  </div>
-  
+      {{/if}}
+      {{/each}}
+       </ul>
+     </div>
+      {{/if}}
