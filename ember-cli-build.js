@@ -59,6 +59,7 @@ app.import('bower_components/moment-timezone/builds/moment-timezone-with-data-20
 app.import('bower_components/jstz/jstz.js');
 app.import('bower_components/jquery.cookie/jquery.cookie.js');
 app.import('bower_components/multiselect/js/jquery.multi-select.js');
+app.import('bower_components/jquery-ui/ui/jquery.ui.datepicker.js');
 app.import('bower_components/jquery-ui/ui/jquery.ui.core.js');
 app.import('bower_components/jquery-ui/ui/jquery.ui.widget.js');
 app.import('bower_components/jquery-ui/ui/jquery.ui.mouse.js');
@@ -71,7 +72,6 @@ app.import('bower_components/jquery-ui/themes/base/jquery-ui.css');
 app.import('bower_components/jquery-ui/themes/base/jquery.ui.theme.css');
 // pikaday date picker
 app.import('bower_components/pikaday/pikaday.js');
-
 // Add fullcalendar
 app.import('bower_components/fullcalendar/dist/fullcalendar.css');
 app.import('bower_components/fullcalendar/dist/fullcalendar.js');
@@ -79,15 +79,23 @@ app.import('bower_components/fullcalendar/dist/fullcalendar.js');
 // Add timepicker
 app.import('bower_components/jquery-timepicker-jt/jquery.timepicker.css');
 app.import('bower_components/jquery-timepicker-jt/jquery.timepicker.min.js');
+app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
 
-
+app.import('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
+app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css');
+app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css.map');
 app.import('bower_components/alertifyjs/dist/js/alertify.js');
 app.import('bower_components/alertifyjs/dist/css/alertify.css');
 app.import('bower_components/pluralize/pluralize.js');
 app.import('bower_components/fakeLoader/fakeLoader.min.js');
 app.import('bower_components/fakeLoader/fakeLoader.css');
-
+app.import('bower_components/blockUI/jquery.blockUI.js');
 app.import('bower_components/another-rest-client/rest-client.js');
+
+app.import('bower_components/bootstrap-drawer/dist/css/bootstrap-drawer.min.css');
+app.import('bower_components/bootstrap-drawer/dist/js/drawer.min.js');
+
 app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
   exports: {
     'ic-ajax': [
