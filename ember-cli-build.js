@@ -5,7 +5,7 @@ var mergeTrees = require('broccoli-merge-trees');
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
-  
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap/dist/fonts', {
     srcDir: '/',
     destDir: '/fonts'
@@ -95,6 +95,9 @@ app.import('bower_components/another-rest-client/rest-client.js');
 
 app.import('bower_components/bootstrap-drawer/dist/css/bootstrap-drawer.min.css');
 app.import('bower_components/bootstrap-drawer/dist/js/drawer.min.js');
+
+app.import('bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css');
+app.import('bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js');
 
 app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
   exports: {

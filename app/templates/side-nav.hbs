@@ -1,25 +1,57 @@
-<div id="drawerExample" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
-        <div class="drawer-controls">
-           {{!--  <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="btn btn-primary btn-sm">Menu</a> --}}
+<div id="drawerExample" class="drawer dw-xs-12 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
+    <div class="drawer-controls">
+        {{!--  <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="btn btn-primary btn-sm">Menu</a> --}}
+    </div>
+    <div class="drawer-contents">
+        <div class="drawer-heading">
+            <h2 class="drawer-title">Filter</h2>
         </div>
-        <div class="drawer-contents">
-            <div class="drawer-heading">
-                <h2 class="drawer-title">Menu</h2>
-            </div>
-            <div class="drawer-body">
-                <p>
-                    This is a properly padded container for content in the
-                    drawer that isn't a navigation.
-                </p>
-                <a href="#">A Regular Link</a>
-            </div>
-            <ul class="drawer-nav">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
-            </ul>
-            <div class="drawer-footer">
-                <small>&copy; Caroline Amaba</small>
+        <div class="drawer-body">
+            <div class="" >
+                <div class="header-withback">
+                    <span class="previous pull-right"><a class="on-filter" href="#" data-remote="true"><i class="fa fa-times" aria-hidden="true"></i></a></span>
+                    <p class="text-center">Filters</p>
+                </div>
+                <form id="filter_form" action="" method="post" data-remote="true">
+                    <div class="filter-container filter-data-bus" onclick="">
+                        <div class="row row-head heading-filter-bus">Bus Type</div>
+                        <div class="row row-body row-body-bt text-center margin-bottom-15">
+                            <div class="col-xs-6 filter-check filter-check-left" data-text="AC" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Bus Type',1)">AC</div>
+                            <div class="col-xs-6 filter-check" data-text="sleeper" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Bus Type',1)">Sleeper</div>
+                            <div class="col-xs-6 filter-check filter-check-left filter-check-bottom" data-text="semi sleeper" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Bus Type',1)">Semi Sleeper</div>
+                            <div class="col-xs-6 filter-check filter-check-bottom" data-text="seater" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Bus Type',1)">Seater</div>
+                            <input type="hidden" id="row-body-bt" name="bus_types" value="" />
+                        </div>
+
+                        <div class="row row-head heading-filter-bus">Departure Time</div>
+                        <div class="row row-body row-body-dt text-center margin-bottom-15" >
+                            <div class="col-xs-3 filter-check filter-check-left filter-check-bottom" data-text="05:00 AM - 11:00AM"><i class="fa fa-sun-o" aria-hidden="true"></i><br/>05:00 AM<br>11:00AM</div>
+                            <div class="col-xs-3 filter-check filter-check-bottom" data-text="11:00 AM - 05:00PM"><i class="fa fa-certificate" aria-hidden="true" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Departure Time',1)"></i><br/>11:00 AM<br>05:00PM</div>
+                            <div class="col-xs-3 filter-check filter-check-bottom" data-text="05:00 PM - 11:00PM"><i class="fa fa-sun-o" aria-hidden="true" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Departure Time',1)"></i><br/>05:00 PM<br>11:00PM</div>
+                            <div class="col-xs-3 filter-check filter-check-bottom" data-text="11:00 PM - 05:00AM"><i class="fa fa-moon-o" aria-hidden="true" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Departure Time',1)"></i><br/>11:00 PM<br>05:00AM</div>
+                            <input type="hidden" id="row-body-dt" name="dp_times" value="" />
+                        </div>
+
+                        <div class="row row-head heading-filter-bus">Operators & Boarding Points</div>
+                        <div class="row row-body margin-bottom-15">
+                        </div>
+
+                        <div class="row row-head heading-filter-bus">Price</div>
+                        <div class="row row-body price-filter-main">
+                            <input id="ex1" data-slider-id='ex1Slider' type="text" name="price" class="span2" value="" data-slider-min="100" data-slider-max="10000" data-slider-step="50" data-slider-value="[100,10000]"/>
+                        </div>
+                        <input type="hidden" name="from_code" value="" />
+                        <input type="hidden" name="to_code" value="" />
+                        <input type="hidden" name="doj" value="" />
+                        <input type="hidden" name="no_of_pass" value="" />
+
+                        <div class="footer-popup navbar-fixed-bottom text-center">
+                            <div class="col-xs-6 cancel-button reset-form">CLEAR FILTER</div>
+                            <div class="col-xs-6 submit-button" type="submit" value="Submit" id="submit-button">APPLY FILTER</div>
+                        </div>
+                    </div>
+              </form>
             </div>
         </div>
     </div>
+</div>

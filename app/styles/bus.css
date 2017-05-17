@@ -1,11 +1,11 @@
 #bus-search{
-    background-color: #fff7d3;
+    background-color: #FFF;
 }
 .gift-icon {
     vertical-align: -webkit-baseline-middle;
 }
 .bus-ticket-offers {
-    
+
 }
 .cashback-title h5 {
     color: #3cc300;
@@ -51,7 +51,7 @@
     text-align: center;
     background: #eee;
     position: absolute;
-    top: 80px;
+    top: 180px;
     right: 25px;
 }
 .marg-bottom-15{
@@ -420,4 +420,81 @@ a.main-row {
 }
 .tab-content{
     padding-top: 51px;
+}
+.button-filter-bus a {
+    background: url(/assets/images/filter-icon.png) no-repeat center center;
+    height: 70px;
+    width: 70px;
+    background-size: 100%;
+    font-size: 0px;
+    display: block;
+    right: 15px;
+    position: relative;
+    float: right;
+    bottom: 20px;
+}
+.on-filter-popup {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: #fff;
+    display: block;
+    z-index: 1111;
+}
+.filter-data-bus {
+    padding: 15px;
+    color: #363636;
+    width: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    height: auto;
+}
+.heading-filter-bus {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 7px;
+    color: #6f6f6f;
+    text-transform: capitalize;
+}
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+.filter-check-left {
+    border-left: solid 1px #d7d7d7;
+}
+.filter-check {
+    border: solid 1px #d7d7d7;
+    border-bottom: 0px;
+    border-left: 0px;
+    padding: 5px;
+    cursor: pointer;
+}
+.filter-check {
+    border: solid 1px #d7d7d7;
+    border-bottom: 0px;
+    border-left: 0px;
+    padding: 5px;
+    cursor: pointer;
+}
+.price-filter-main {
+    border: solid 1px #d7d7d7;
+    padding: 25px;
+}
+#ex1Slider .slider-selection {
+    background: #BABABA;
+}
+.slider.slider-horizontal {
+    width: 94% !important;
+    margin-left: 11px;
+}
+.slider .tooltip{opacity: 1;}
+.on-filter-popup .footer-popup {
+    background: #363636;
+    color: #fff;
+}
+.on-filter-popup .footer-popup .submit-button {
+    background: #1079d7;
 }

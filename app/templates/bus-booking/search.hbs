@@ -1,53 +1,56 @@
 {{partial "navbar" }}
 <div class="">
-	
 
-<div class="container-fluid bgclr-wht">
-<div class="tab-content clearfix">
-<div id="bus-search-form">
-   <form method="post" {{ action "getBus" on="submit"}}>
 
-    <div class="form-group">
-     <div class="ui-widget">
+  <div class="container-fluid bgclr-wht">
+    <div class="tab-content clearfix">
+      <div id="bus-search" class="row">
+        <img src="/assets/images/banner-bus-mobile.png" alt="25% discount">
+        <div id="bus-search-form">
+          <form method="post" {{ action "getBus" on="submit"}}>
 
-      {{city-picker nameCode=model.fromCode name=model.fromName model=model first_form = true}}
+            <div class="form-group">
+              <div class="ui-widget">
+
+                {{city-picker nameCode=model.fromCode name=model.fromName model=model first_form = true}}
+              </div>
+
+            </div>
+            <div class="exchange-circle">&#8645;</div>
+            <div class="form-group">
+
+              <div class="ui-widget">
+                {{city-picker nameCode=model.toCode name=model.toName model=model first_form = false}}
+              </div>
+            </div>
+
+
+            <div class="form-group col-lg-6 col-xs-6 no-padding-left no-padding-right has-feedback">
+              <label class="control-label bus-search-label">Date of Journey</label>
+
+              {{date-picker}}
+              <!-- <i class="fa fa-calendar form-control-feedback date-picker" id="date-picker-icon"></i> -->
+            </div>
+
+            <div class="form-group col-lg-6 col-xs-4 col-xs-offset-2 no-padding-right">
+              <label class="control-label bus-search-label">Travellers</label>
+
+              <div class="dec button" data-text="minus" ><a class="fa fa-minus" aria-hidden="true" {{action "changePass" 0}} ></a></div>
+              {{input type='text' name=pass readonly="readonly" id="french-hens" value="1" class="form-control valid form-control-sm"}}
+              {{!-- <input type="text" name="no_of_pass" id="french-hens" value="1" class="form-control valid form-control-sm" readonly/> --}}
+              <div class="inc button" data-text="plus"  ><a class="fa fa-plus" aria-hidden="true" {{action "changePass" 1}}></a>
+              </div>
+
+            </div>
+            <div class="col-xs-12 col-md-12 marg-bottom-15">
+              <span class="input-group-btn text-center">
+                <button type="submit" class="btn btn-block stn-srch-btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
+              </span>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
-
-    </div>
-    <div class="exchange-circle">&#8645;</div>
-    <div class="form-group">
-
-    <div class="ui-widget">
-      {{city-picker nameCode=model.toCode name=model.toName model=model first_form = false}}
-    </div>
-    </div>
-
-
-    <div class="form-group col-lg-6 col-xs-6 no-padding-left no-padding-right has-feedback">
-      <label class="control-label bus-search-label">Date of Journey</label>
-
-      {{date-picker}}
-      <!-- <i class="fa fa-calendar form-control-feedback date-picker" id="date-picker-icon"></i> -->
-    </div>
-
-    <div class="form-group col-lg-6 col-xs-4 col-xs-offset-2 no-padding-right">
-      <label class="control-label bus-search-label">Travellers</label>
-
-      <div class="dec button" data-text="minus" ><a class="fa fa-minus" aria-hidden="true" {{action "changePass" 0}} ></a></div>
-      {{input type='text' name=pass readonly="readonly" id="french-hens" value="1" class="form-control valid form-control-sm"}}
-      {{!-- <input type="text" name="no_of_pass" id="french-hens" value="1" class="form-control valid form-control-sm" readonly/> --}}
-      <div class="inc button" data-text="plus"  ><a class="fa fa-plus" aria-hidden="true" {{action "changePass" 1}}></a>
-    </div>
-   
-    </div>
-    <div class="col-xs-12 col-md-12 marg-bottom-15">
-    	<span class="input-group-btn text-center">
-      <button type="submit" class="btn btn-block stn-srch-btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
-    </span>
-    </div>
-    
-  </form>
   </div>
-</div>
-</div>
 </div>
