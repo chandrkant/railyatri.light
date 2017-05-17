@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 			      return;
 			    }
 			    $.ajax( {
-			      url: "https://food1.railyatri.in/redbus/source-city-list.json",
+			      url: "https://test.railyatri.in/redbus/source-city-list.json",
 			      dataType: "jsonp",
 			      data: {
 			        q: request.term
@@ -41,7 +41,7 @@ export default Ember.Component.extend({
           return;
         }
         $.ajax( {
-          url: "https://food1.railyatri.in/redbus/bus-destination-city.json",
+          url: "https://test.railyatri.in/redbus/bus-destination-city.json",
           dataType: "jsonp",
           data: {
             source_city_id: $('#from_code').val(),
@@ -78,8 +78,8 @@ function get_filter_list_city(data, term) {
 
             });
         }
-         
-        
+
+
     });
     return cache;
 }
