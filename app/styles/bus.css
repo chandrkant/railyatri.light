@@ -498,3 +498,7 @@ a.main-row {
  .footer-popup .submit-button {
     background: #1079d7;
 }
+.row-body-bt .selected {
+    background: #1079d7;
+    color: #fff;
+}
