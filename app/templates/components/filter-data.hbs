@@ -1,0 +1,26 @@
+<div class="row row-head heading-filter-bus">Bus Type</div>
+<div class="row row-body row-body-bt text-center margin-bottom-15">
+  <div class="col-xs-6 filter-check filter-check-left" data-text="AC" >AC</div>
+  <div class="col-xs-6 filter-check" data-text="sleeper" >Sleeper</div>
+  <div class="col-xs-6 filter-check filter-check-left filter-check-bottom" data-text="semi sleeper" >Semi Sleeper</div>
+  <div class="col-xs-6 filter-check filter-check-bottom" data-text="seater" onclick="ga('send','event','Bus Ticket Booking – Operator Listing','Filter Icon Click','Bus Type',1)">Seater</div>
+  <input type="hidden" id="row-body-bt" name="bus_types" value="" />
+</div>
+
+<div class="row row-head heading-filter-bus">Departure Time</div>
+<div class="row row-body row-body-dt text-center margin-bottom-15" >
+  <div class="col-xs-3 filter-check filter-check-left filter-check-bottom" data-text="05:00 AM - 11:00AM"><i class="fa fa-sun-o" aria-hidden="true"></i><br/>05:00 AM<br>11:00AM</div>
+  <div class="col-xs-3 filter-check filter-check-bottom" data-text="11:00 AM - 05:00PM"><i class="fa fa-certificate" aria-hidden="true" ></i><br/>11:00 AM<br>05:00PM</div>
+  <div class="col-xs-3 filter-check filter-check-bottom" data-text="05:00 PM - 11:00PM"><i class="fa fa-sun-o" aria-hidden="true" ></i><br/>05:00 PM<br>11:00PM</div>
+  <div class="col-xs-3 filter-check filter-check-bottom" data-text="11:00 PM - 05:00AM"><i class="fa fa-moon-o" aria-hidden="true" ></i><br/>11:00 PM<br>05:00AM</div>
+  <input type="hidden" id="row-body-dt" name="dp_times" value="" />
+</div>
+
+<div class="row row-head heading-filter-bus">Operators & Boarding Points</div>
+<div class="row row-body margin-bottom-15">
+</div>
+
+<div class="row row-head heading-filter-bus">Price</div>
+<div class="row row-body price-filter-main">
+  <input id="ex1" data-slider-id='ex1Slider' type="text" name="price" class="span2" value="" data-slider-min="100" data-slider-max="10000" data-slider-step="50" data-slider-value="[100,10000]"/>
+</div>

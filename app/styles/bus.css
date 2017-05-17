@@ -491,10 +491,10 @@ a.main-row {
     margin-left: 11px;
 }
 .slider .tooltip{opacity: 1;}
-.on-filter-popup .footer-popup {
+ .footer-popup {
     background: #363636;
     color: #fff;
 }
-.on-filter-popup .footer-popup .submit-button {
+ .footer-popup .submit-button {
     background: #1079d7;
 }
