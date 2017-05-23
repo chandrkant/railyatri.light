@@ -1072,7 +1072,7 @@ margin: 5px 0px 15px 0px;
  
 .sprite-mobile { 
   display: inline-block; 
-  background-image: url('/assets/mobile_view/icons/sprite-mobile.png');
+  background-image: url('/assets/images/icons/sprite-mobile.png');
   background-repeat: no-repeat;
   overflow: hidden;
   background-size: 67px;
@@ -1357,4 +1357,15 @@ padding: 4em 0 0 0;
 }
 .cust-padd{
   padding: 3px 16px 11px;
+}
+.fold.dw-xs-12 {
+    margin-left: -116%;
+}
+#bus-search-form .tab-content {
+    color: #fff;
+    padding: 15px;
+}
+a.fa{
+  text-decoration: none;
+  color: #9a9a9a;
 }

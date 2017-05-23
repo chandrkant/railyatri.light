@@ -1,12 +1,11 @@
 {{partial "navbar" }}
 <div class="">
-
-
   <div class="container-fluid bgclr-wht">
     <div class="tab-content clearfix">
       <div id="bus-search" class="row">
         <img src="/assets/images/banner-bus-mobile.png" alt="25% discount">
         <div id="bus-search-form">
+         <div class="tab-content clearfix">
           <form method="post" {{ action "getBus" on="submit"}}>
 
             <div class="form-group">
@@ -49,6 +48,7 @@
             </div>
 
           </form>
+        </div>
         </div>
       </div>
     </div>

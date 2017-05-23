@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
 	num_of_pass: null,
 	availableTrips: null,
 	responseData: null, 
+	filterCheck: true,
 	actions: {
 	 sort: function(){
        // var result = this.get('availableTrips');

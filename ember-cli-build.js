@@ -79,12 +79,12 @@ app.import('bower_components/fullcalendar/dist/fullcalendar.js');
 // Add timepicker
 app.import('bower_components/jquery-timepicker-jt/jquery.timepicker.css');
 app.import('bower_components/jquery-timepicker-jt/jquery.timepicker.min.js');
-app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
-app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
+// app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+// app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
 
-app.import('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
-app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css');
-app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css.map');
+// app.import('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
+// app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css');
+// app.import('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css.map');
 app.import('bower_components/alertifyjs/dist/js/alertify.js');
 app.import('bower_components/alertifyjs/dist/css/alertify.css');
 app.import('bower_components/pluralize/pluralize.js');

@@ -95,16 +95,6 @@ body {
 .market-scroll {
 	
 }
-.market-place img {
-	/*width: 176px;
-	height: 176px;
-	border: 1px solid #d5d5d5;
-	padding: 48px 44px;*/
-	padding: 5px 10px;
-	border-radius: 50%;
-	/*margin-bottom: 25px;*/
-	width: 85px;
-}
 .market-place div.rail-mall-icon  {
 	
 }
@@ -130,9 +120,7 @@ body {
 	border: 1px solid #b2b2b2;
 	min-height: 70px;
 }
-.rail-mall-bottom img {
-	/*height: 30px;*/
-}
+
 .rail-mall-bottom label {
 	font-size: 16px;
 	color: #ff9000;
@@ -315,7 +303,7 @@ time, mark, audio, video {
   padding: 15px 0;
 } 
 .go-prev {
-  margin-left: 3%;
+  /*margin-left: 3%;*/
 }
 .go-prev img {
   margin-top: 20%;

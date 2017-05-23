@@ -1,9 +1,16 @@
 <nav class="top-nav-block navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="row">
+        {{#if homePage}}
+        <button type="button" class="drawer-toggle drawer-hamburger">
+          <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span>
+        </button>
+        {{else}}
         <div class="col-xs-2 go-prev">
           <img src="/assets/images/arrow-main.png" alt="" id="goBackBtn" {{action "goBack"}} >
         </div>
+        {{/if}}
         <div class="col-xs-9 nav-title">{{title}}</div>
         <div class="col-xs-1 opt-nav">
           {{!-- <div class="dropdown">

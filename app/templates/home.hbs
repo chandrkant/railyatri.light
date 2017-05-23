@@ -1,112 +1,90 @@
 {{partial "navbar" title="Home"}}
- <div id="mobile-home" class="bgclr-grey">
-    <div class="container-fluid">
-      <div class="marg-btm-15">
-        <div class="row bgclr-white menu-box">
-          <div class="col-xs-3 menu-options text-center">
-            {{!-- <a href="/time-table"> --}}
-             {{#link-to 'time-table-search'}}
-              <img src="/assets/images/icons/icon-time-table.png" alt="Time Table RailYatri Icon">
-              <p>Time<br/> Table</p>
-              {{/link-to}}
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="/pnr-status">
-              <img src="/assets/images/icons/icon-pnr-status.png" alt="PNR Status RailYatri Icon">
-              <p>PNR<br/> Status</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a {{action "doSome"}}>
-              <img src="/assets/images/icons/icon-train-status.png" alt="Train Status RailYatri Icon">
-              <p>Train<br/> Status</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            {{!-- <a href="/live-arr-dep-search"> --}}
-            {{#link-to 'live-arr-dep-search'}}  
-              <img src="/assets/images/icons/icon-arr-dep.png" alt="Live Arrival and Departure RailYatri Icon">
-              <p>Live<br/> Arrv/Dep</p>
-            {{!-- </a> --}}
-            {{/link-to}}
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="/rail-wisdom">
-              <img src="/assets/images/icons/icon-wisdom.png" alt="Rail Wisdom RailYatri Icon">
-              <p>Rail<br/> Wisdom</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="/seat-availability">
-              <img src="/assets/images/icons/icon-seat-available.png" alt="Seat Availability RailYatri Icon">
-              <p>Seat<br/> Availability</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            {{#link-to "trains-between-station"}}
-              <img src="/assets/images/icons/icon-train-between.png" alt="icon">
-              <p>Trains b/w<br/> Stations</p>
-            {{/link-to}}
-          </div>
-          <div class="col-xs-3 menu-options text-center expand-btn">
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#demo" class="collapsed">
-              <img src="/assets/images/icons/icon-more.png" alt="Menu Expand RailYatri Icon">
-              <!-- <p>Random Test</p> -->
-            </a>
-          </div>
+<div id="mobile-home" class="bgclr-grey">
+  <div class="container-fluid">
+    <div class="mar-botom-15">
+      <div class="row bgclr-white menu-box">
+        <div class="col-xs-3 menu-options text-center">
+          {{#link-to 'time-table-search'}}
+            <span class="sprite-mobile icon-time-table" title="Time Table RailYatri Icon"></span>
+            <p>Time<br/> Table</p>
+          {{/link-to}}
         </div>
-        <div id="demo" class="row bgclr-white menu-box collapse">
-          <div class="col-xs-3 menu-options text-center">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/icons/icon-locals-metros.png" alt="Locals and Metros RailYatri Icon">
-              <p>Locals<br/> and Metros</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/icons/icon-fare-cal.png" alt="Fare Calculator RailYatri Icon">
-              <p>Fare<br/> Calculator</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/icons/icon-wallet.png" alt="My Wallet RailYatri Icon">
-              <p>My<br/> Wallet</p>
-            </a>
-          </div>
-          <div class="col-xs-3 menu-options text-center">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/icons/icon-offer.png" alt="Offers In App RailYatri Icon">
-              <p>Offers<br/> In App</p>
-            </a>
-          </div>
-                    <!-- <div class="col-xs-3 menu-options text-center">
-                        <a href="javascript:void(0);">
-                            <img src="/assets/images/icon-temp.png" alt="icon">
-                            <p>Random Test</p>
-                        </a>
-                    </div>
-                    <div class="col-xs-3 menu-options text-center">
-                        <a href="javascript:void(0);">
-                            <img src="/assets/images/icon-temp.png" alt="icon">
-                            <p>Random Test</p>
-                        </a>
-                    </div>
-                    <div class="col-xs-3 menu-options text-center">
-                        <a href="javascript:void(0);">
-                            <img src="/assets/images/icon-temp.png" alt="icon">
-                            <p>Random Test</p>
-                        </a>
-                    </div>
-                    <div class="col-xs-3 menu-options text-center">
-                        <a href="javascript:void(0);">
-                            <img src="/assets/images/icon-temp.png" alt="icon">
-                            <p>Random Test</p>
-                        </a>
-                      </div> -->
-                    </div>
+        <div class="col-xs-3 menu-options text-center">
+          <a href="/pnr-status">
+            <span class="sprite-mobile icon-pnr-status" title="PNR Status RailYatri Icon"></span>
+            <p>PNR<br/> Status</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center">
+           <a {{action "doSome"}}>
+            <span class="sprite-mobile icon-train-status" title="Train Status RailYatri Icon"></span>
+            <p>Train<br/> Status</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center">
+          {{#link-to 'live-arr-dep-search'}}
+            <span class="sprite-mobile icon-arr-dep" title="Live Arrival and Departure RailYatri Icon"></span>
+            <p>Live<br/> Arrv/Dep</p>
+          {{/link-to}}
+        </div>
+        <div class="col-xs-3 menu-options no-divider text-center">
+          <a href="/rail-wisdom">
+            <span class="sprite-mobile icon-wisdom" title="Rail Wisdom RailYatri Icon"></span>
+            <p>Rail<br/> Wisdom</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options no-divider text-center">
+          <a href="/seat-availability">
+            <span class="sprite-mobile icon-seat-available" title="Seat Availability RailYatri Icon"></span>
+            <p>Seat<br/> Availability</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options no-divider text-center">
+          {{#link-to "trains-between-station"}}
+            <span class="sprite-mobile icon-train-between" title=""></span>
+            <p>Trains b/w<br/> Stations</p>
+          {{/link-to}}
+        </div>
+        <div class="col-xs-3 menu-options no-divider text-center">
+          <a href="/user_wallets/index">
+            <span class="sprite-mobile icon-wallet" title="My Wallet RailYatri Icon"></span>
+            <p>My<br/> Wallet</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center expand-btn hide">
+          <a href="javascript:void(0);" data-toggle="collapse" data-target="#demo" class="collapsed">
+            <img src="/assets/images/icons/icon-more.png" alt="Menu Expand RailYatri Icon">
+            <!-- <p>Random Test</p> -->
+          </a>
+        </div>
       </div>
-
+      <div id="demo" class="row bgclr-white menu-box collapse hide">
+        <div class="col-xs-3 menu-options text-center">
+          <a href="javascript:void(0);">
+            <span class="sprite-mobile icon-locals-metros" title="Locals and Metros RailYatri Icon"></span>
+            <p>Locals<br/> and Metros</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center">
+          <a href="javascript:void(0);">
+            <span class="sprite-mobile icon-fare-cal" title="Fare Calculator RailYatri Icon"></span>
+            <p>Fare<br/> Calculator</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center">
+          <a href="/user_wallets/index">
+            <span class="sprite-mobile icon-wallet" title="My Wallet RailYatri Icon"></span>
+            <p>My<br/> Wallet</p>
+          </a>
+        </div>
+        <div class="col-xs-3 menu-options text-center">
+          <a href="javascript:void(0);">
+            <span class="sprite-mobile icon-offer" title="Offers In App RailYatri Icon"></span>
+            <p>Offers<br/> In App</p>
+          </a>
+        </div>  
+      </div>
+    </div>
       <div class="row bgclr-white marg-btm-15">
         <div class="col-xs-12">
           <div class="ry-updates">
@@ -202,4 +180,3 @@
       
     </div>
   </div>
-  
