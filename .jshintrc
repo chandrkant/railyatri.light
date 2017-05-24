@@ -5,7 +5,8 @@
     "moment",
     "alertify",
     "RestClient",
-    "-Promise"
+    "-Promise",
+    "node-tesseract"
   ],
   "browser": true,
   "boss": true,

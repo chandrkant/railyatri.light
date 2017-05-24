@@ -2,10 +2,13 @@
     <div class="container-fluid">
       <div class="row">
         {{#if homePage}}
-        <button type="button" class="drawer-toggle drawer-hamburger">
-          <span class="sr-only">toggle navigation</span>
-          <span class="drawer-hamburger-icon"></span>
-        </button>
+        <div class="col-xs-2 go-prev">
+          <div class="hia-hamburger">
+            <div data-bar="1" class="hia-bar"></div>
+            <div data-bar="2" class="hia-bar"></div>
+            <div data-bar="3" class="hia-bar"></div>
+          </div>
+        </div>
         {{else}}
         <div class="col-xs-2 go-prev">
           <img src="/assets/images/arrow-main.png" alt="" id="goBackBtn" {{action "goBack"}} >
@@ -28,7 +31,7 @@
             </div>
           </div> --}}
         </div>
-      </div> 
+      </div>
     </div>
   </nav>
 {{!-- <div id="drawerExample" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">

@@ -1,0 +1,17 @@
+{{partial "navbar" title="Home"}}
+<div class="container-fluid bgclr-wht shadow">
+    <div class="row" id="searchForm">
+      <div class="train-srch-block">
+      <form method="post" {{ action "gePnrStatus" on="submit"}}>
+          <div class="col-xs-12">
+            <label>PNR Number</label>
+            {{input  id="pnr-number"  placeholder="PNR Numbet" class="" }}
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-xs-12 stn-srch-btn">
+            <button type="submit" class="btn btn-block search-train" data-loading-text="<i class='fa fa-circle-o-notch fa-spin fa-1x fa-fw'></i><span class='sr-only'>Loading...</span> PLEASE WAIT..">SEARCH</button>
+          </div>
+       </form>
+      </div>
+    </div>
+  </div>

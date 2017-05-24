@@ -36,7 +36,8 @@
     "bootstrap-drawer": "^1.0.6",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "bootstrap-datepicker": "^1.6.4",
-    "seiyria-bootstrap-slider": "^9.8.0"
+    "seiyria-bootstrap-slider": "^9.8.0",
+    "hamburger-icon-animate": "^0.2.0"
   },
   "resolutions": {
     "bootstrap": "^3.3.7",

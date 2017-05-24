@@ -34,6 +34,9 @@ Router.map(function() {
   this.route('payment', function() {
     this.route('select-payment');
   });
+  this.route('pnr-search');
+  this.route('pnr-result',{path: "/pnr-number/:pnr_number"});
+  this.route('seat-availability');
 });
 
 export default Router;

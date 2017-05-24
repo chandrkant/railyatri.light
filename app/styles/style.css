@@ -93,10 +93,10 @@ body {
 	margin-bottom: 14px;
 }
 .market-scroll {
-	
+
 }
 .market-place div.rail-mall-icon  {
-	
+
 }
 .rail-mall-icon {
     width: 85px;
@@ -214,7 +214,7 @@ body {
   text-decoration: none;
 }
 .rystory-sect {
-  padding: 1em 0; 
+  padding: 1em 0;
 }
 .rystory-sect .ry-head {
   padding-bottom: 1em;
@@ -260,8 +260,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -299,9 +299,9 @@ time, mark, audio, video {
 /************************* top-nav-block **************************/
 .top-nav-block {
   background-color: #2196f3;
-  background-image: none; 
+  background-image: none;
   padding: 15px 0;
-} 
+}
 .go-prev {
   /*margin-left: 3%;*/
 }
@@ -468,7 +468,7 @@ time, mark, audio, video {
 .dropdown a:hover {background-color: #f1f1f1}
 .show {display:block;}
 /************************* 3 Dot dropdown /**************************/
- 
+
 /************************* live-arr-result ends /********/
 
 .stn-search-block {
@@ -476,7 +476,7 @@ time, mark, audio, video {
 }
 .stn-search-block form {
   margin: 1em 0;
-} 
+}
 .stn-search-block label {
   display: block;
   font-weight: normal;
@@ -515,7 +515,7 @@ time, mark, audio, video {
 
 .stn-search-block form, .train-srch-block form {
   margin: 1em 0;
-} 
+}
 .stn-search-block label, .train-srch-block label {
   display: block;
   font-weight: normal;
@@ -559,7 +559,7 @@ time, mark, audio, video {
 }
 .search-hist-info, .sponsor-info {
   padding: 1em 0;
-  margin: 0 1em; 
+  margin: 0 1em;
   float: left;
   border-bottom: 1px solid #898989;
 }
@@ -601,11 +601,11 @@ time, mark, audio, video {
 
 /************************* no-recent-searches **************************/
 .train-search-block {
-  padding-top: 70px;
+  /*padding-top: 70px;*/
 }
 .train-search-block form {
   margin: 1em 0;
-} 
+}
 .train-search-block label {
   display: block;
   font-weight: normal;

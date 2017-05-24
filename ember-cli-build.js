@@ -95,7 +95,8 @@ app.import('bower_components/another-rest-client/rest-client.js');
 
 app.import('bower_components/bootstrap-drawer/dist/css/bootstrap-drawer.min.css');
 app.import('bower_components/bootstrap-drawer/dist/js/drawer.min.js');
-
+app.import('bower_components/hamburger-icon-animate/css/hamburger-icon-animate.css');
+app.import('bower_components/hamburger-icon-animate/js/hamburger-icon-animate.js');
 app.import('bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css');
 app.import('bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js');
 

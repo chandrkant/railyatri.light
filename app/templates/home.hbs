@@ -10,10 +10,10 @@
           {{/link-to}}
         </div>
         <div class="col-xs-3 menu-options text-center">
-          <a href="/pnr-status">
+        {{#link-to 'pnr-search'}}
             <span class="sprite-mobile icon-pnr-status" title="PNR Status RailYatri Icon"></span>
             <p>PNR<br/> Status</p>
-          </a>
+          {{/link-to}}
         </div>
         <div class="col-xs-3 menu-options text-center">
            <a {{action "doSome"}}>
@@ -34,10 +34,10 @@
           </a>
         </div>
         <div class="col-xs-3 menu-options no-divider text-center">
-          <a href="/seat-availability">
+          {{#link-to 'seat-availability'}}
             <span class="sprite-mobile icon-seat-available" title="Seat Availability RailYatri Icon"></span>
             <p>Seat<br/> Availability</p>
-          </a>
+          {{/link-to}}
         </div>
         <div class="col-xs-3 menu-options no-divider text-center">
           {{#link-to "trains-between-station"}}
@@ -82,7 +82,7 @@
             <span class="sprite-mobile icon-offer" title="Offers In App RailYatri Icon"></span>
             <p>Offers<br/> In App</p>
           </a>
-        </div>  
+        </div>
       </div>
     </div>
       <div class="row bgclr-white marg-btm-15">
@@ -95,7 +95,7 @@
       </div>
 
       {{home-page}}
-      
+
       <div class="row bgclr-white marg-btm-15">
         <div class="food-card">
           <img src="/assets/images/milk-box-card.png" class="img-responsive">
@@ -132,7 +132,7 @@
           <img src="/assets/images/food-card.png" class="img-responsive">
         </div>
       </div>
-      
+
       <div class="row bgclr-white bulletin-sect marg-btm-15">
         <div class="col-xs-12">
           <p>RY BULLETIN</p>
@@ -177,6 +177,6 @@
           <p>We are happy to announce that RailYatri app has</p>
         </div>
       </div>
-      
+
     </div>
   </div>
