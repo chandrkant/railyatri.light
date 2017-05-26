@@ -9,7 +9,7 @@ body {
 }
 .bgclr-grey {
 	background-color: #eee;
-  padding-top: 50px;
+  /*padding-top: 50px;*/
 }
 .bgclr-white {
 	background-color: #fff;
@@ -956,5 +956,5 @@ textarea:hover,input:hover, textarea:active, input:active, textarea:focus, input
   color: #363636;
 }
 .container-fluid.bgclr-wht.shadow{
-  margin-top: 50px;
+  /*margin-top: 50px;*/
 }

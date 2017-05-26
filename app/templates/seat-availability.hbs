@@ -1,93 +1,73 @@
 {{partial "navbar" title="Home"}}
 <div class="container-fluid">
-  <div class="row train-search-pill">
-    <ul class="nav nav-tabs">
-      <li class="col-xs-6 no-pad text-center active">
-        <a data-toggle="tab" href="#home">BY TRAIN</a>
-      </li>
-      <li class="col-xs-6 no-pad text-center">
-        <a data-toggle="tab" href="#menu1">BY STATION</a>
-      </li>
-    </ul>
-  </div>
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <div class="row bgclr-wht">
-        <div class="train-srch-block">
-          <form>
-            <div class="col-xs-12">
-              <label>Train No. or Name</label>
-              <input type="text" name="" placeholder="Enter">
-            </div>
-            <div class="clearfix"></div>
-            <div class="col-xs-12 stn-srch-btn">
-              <a href="#" class="btn btn-block">SEARCH</a>
-            </div>
-          </form>
-        </div>
+<div class="row bgclr-wht">
+  <div class="train-srch-block">
+    <form accept-charset="UTF-8" action="/m/seat-availability" method="post" role="form"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="JEdkGvOMPVfXv3kMUsxp8rxp8vgr3CrDUgGiO4mZ5rA="></div>
+      <input type="hidden" id="device_type" value="mobile_web">
+      <div class="col-xs-12">
+        <label>Train No. or Name</label>
+        {{train-picker}}
+        {{!-- <input type="text" name="train_number" class="trainpicker select_focus ui-autocomplete-input" autofocus="" id="train_seat_avl" autocomplete="off"> --}}
       </div>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <div class="row bgclr-wht">
-        <div class="train-srch-block">
-          <form>
-            <div class="col-xs-12">
-              <label>Train No. or Name</label>
-              <input type="text" name="" placeholder="Enter">
-            </div>
-            <div class="clearfix"></div>
-            <div class="col-xs-12 stn-srch-btn">
-              <a href="#" class="btn btn-block">SEARCH</a>
-            </div>
-          </form>
+      <!-- m -->
+      <div>
+        <div class="col-xs-12 select-station">
+          <label>From Station</label>
+          <span id="train_from_station">
+            <select class="live-form-control" id="sel1">
+              <option></option>
+            </select>
+          </span>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid bgclr-wht margin-top-15">
-    <div class="row">
-      <div class="seat-hist-block">
-        <div class="col-xs-12">
-          <p class="hist-title">RECENT SEARCHES</p>
-        </div>
-        <div class="seat-hist-info">
-          <div class="col-xs-2 left-icon">
-            <img src="/assets/images/list-icon-seat.png" alt="list icon-seat" class="img-responsive">
-          </div>
-          <div class="col-xs-8 train-content">
-            <p class="train-search-pill-colr">12057 NEW DELHI - UNA HIMACHAL JAN SHATABDI EXPRESS</p>
-            <span class="train-search-pill-colr">09/09/1984</span>
-            <div class="train-ticket-info">
-              <span class="train-search-pill-colr">CSTM &#8594; HWH</span> <span class="train-search-pill-colr">Sleeper</span> <span class="train-search-pill-colr">General</span>
-            </div>
-          </div>
-          <div class="col-xs-2 right-icon">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
-            </a>
-          </div>
-        </div>
-        <div class="seat-hist-info">
-          <div class="col-xs-2 left-icon">
-            <img src="/assets/images/list-icon-seat.png" alt="list icon-seat" class="img-responsive">
-          </div>
-          <div class="col-xs-8 train-content">
-            <p class="train-search-pill-colr">12057 NEW DELHI - UNA HIMACHAL JAN SHATABDI EXPRESS</p>
-            <span class="train-search-pill-colr">09/09/1984</span>
-            <div class="train-ticket-info">
-              <span class="train-search-pill-colr">CSTM &#8594; HWH</span> <span class="train-search-pill-colr">Sleeper</span> <span class="train-search-pill-colr">General</span>
-            </div>
-          </div>
-          <div class="col-xs-2 right-icon">
-            <a href="javascript:void(0);">
-              <img src="/assets/images/delete-button.png" alt="arrow icon" class="img-responsive hist-delete">
-            </a>
-          </div>
+        <div class="col-xs-12 select-station">
+          <label style="margin-top: 10px;">To Station</label>
+          <span id="train_to_station">
+            <select class="live-form-control" id="sel1">
+              <option></option>
+            </select>
+          </span>
         </div>
         <div class="col-xs-12">
-          <p class="col-12-blank">&nbsp;</p>
+          <label style="margin-top: 10px;">Boarding Date</label>
+          <input type="text" name="journey_date" value="" class="live-form-control datepicker hasDatepicker" id="dp1495725453134">
+          <span class="clear_input" title="clear field"><i class="fa fa-remove fa-lg"></i></span>
         </div>
+        <div class="col-xs-12 select-station">
+          <div class="col-xs-6 select-station no-pad">
+            <label>Class</label>
+            <select class="live-form-control" id="journey_class" name="journey_class"><option value="1A">FIRST AC</option>
+              <option value="2A">SECOND AC</option>
+              <option value="3A">THIRD AC</option>
+              <option value="3E">3 AC Economy</option>
+              <option value="CC">CHAIR CAR</option>
+              <option value="FC">FIRST CLASS</option>
+              <option value="SL" selected="selected">SLEEPER CLASS</option>
+              <option value="2S">SECOND SEATING</option></select>
+            </div>
+            <div class="col-xs-6 select-station" style="padding-right: 0;">
+              <label>Quota</label>
+              <select class="live-form-control" id="quota" name="quota"><option value="CK">Tatkal</option>
+                <option value="PT">Premium Tatkal</option>
+                <option value="LD">Ladies</option>
+                <option value="DF">Defence</option>
+                <option value="FT">Foreign Tourist</option>
+                <option value="DP">Duty Pass</option>
+                <option value="HP">Handicaped</option>
+                <option value="PH">Parliament House</option>
+                <option value="SS">Lower Berth</option>
+                <option value="YU">Yuva</option>
+                <option value="GN" selected="selected">General</option></select>
+              </div>
+            </div>
+          </div>
+          <!-- l -->
+          <div class="clearfix"></div>
+          <div class="col-xs-12 stn-srch-btn">
+            <button type="submit" class="btn btn-block">GO</button>
+          </div>
+          <div class="col-xs-12" style="padding:0 0 70px 15px;">
+            <a href="/current-seat-availability" target="_blank">Check Current Seat Availability</a>
+          </div>
+        </form>        </div>
       </div>
     </div>
-  </div>
-</div>

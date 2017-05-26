@@ -1579,4 +1579,34 @@ div.humburgar {
 .btn-pad {
   padding-left: 0;
 }
+#mainDiv{
+  padding-top: 50px;
+}
+.live-form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #000;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #898989;
+}
+.select-station .live-form-control {
+    font-size: 18px;
+    color: #000;
+    height: 25px;
+}
+.no-pad {
+    padding: 0 !important;
+}
+.stn-search-block label, .train-srch-block label {
+    display: block;
+    font-weight: normal;
+    color: #363636;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
 /************************* seat-availaibility ends /**************************/
