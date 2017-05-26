@@ -2,11 +2,12 @@
 <div class="container-fluid">
 <div class="row bgclr-wht">
   <div class="train-srch-block">
-    <form accept-charset="UTF-8" action="/m/seat-availability" method="post" role="form"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="JEdkGvOMPVfXv3kMUsxp8rxp8vgr3CrDUgGiO4mZ5rA="></div>
+    <form >
       <input type="hidden" id="device_type" value="mobile_web">
       <div class="col-xs-12">
         <label>Train No. or Name</label>
-        {{train-picker}}
+        {{train-picker actionName="getTimeTable"}}
+        {{input type="hidden" id="picker" value="1" }}
         {{!-- <input type="text" name="train_number" class="trainpicker select_focus ui-autocomplete-input" autofocus="" id="train_seat_avl" autocomplete="off"> --}}
       </div>
       <!-- m -->
@@ -14,22 +15,32 @@
         <div class="col-xs-12 select-station">
           <label>From Station</label>
           <span id="train_from_station">
-            <select class="live-form-control" id="sel1">
-              <option></option>
+            <select class="live-form-control">
+              <option value="">From Station</option>
+              {{#each stations.route as |station|}}
+                {{#if station.stop}}
+                 <option value="{{station.station_code}}">{{station.station_name}} </option>
+                {{/if}}
+              {{/each}}
             </select>
           </span>
         </div>
         <div class="col-xs-12 select-station">
           <label style="margin-top: 10px;">To Station</label>
           <span id="train_to_station">
-            <select class="live-form-control" id="sel1">
-              <option></option>
+            <select class="live-form-control" >
+             <option value="">To Station</option>
+              {{#each stations.route as |station|}}
+                {{#if station.stop}}
+                 <option value="{{station.station_code}}">{{station.station_name}} </option>
+                {{/if}}
+              {{/each}}
             </select>
           </span>
         </div>
         <div class="col-xs-12">
           <label style="margin-top: 10px;">Boarding Date</label>
-          <input type="text" name="journey_date" value="" class="live-form-control datepicker hasDatepicker" id="dp1495725453134">
+           {{date-picker}}
           <span class="clear_input" title="clear field"><i class="fa fa-remove fa-lg"></i></span>
         </div>
         <div class="col-xs-12 select-station">

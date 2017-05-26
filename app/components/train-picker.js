@@ -13,8 +13,9 @@ export default Ember.Component.extend({
        }
      },
 	 didInsertElement: function() {
+        var self = this;
 		Ember.run.scheduleOnce('afterRender', this, function() {
-			$('.trainpicker').autocomplete({
+		$('.trainpicker').autocomplete({
         minLength: 3,
         source: function(request, response) {
             // var loadingElement = $(this)[0]["element"].siblings();
@@ -41,7 +42,11 @@ export default Ember.Component.extend({
         select: function(event, ui) {
             $(this).removeClass("ui-autocomplete-loading");
             $(this).val(ui.item.value); 
-            $(this).next().next().css('display', 'block');  
+            if($("#picker").val()=="1"){
+               self.sendAction('actionName', ui.item.number);
+            } 
+            $(this).next().next().css('display', 'block');
+
         }
     });
 
