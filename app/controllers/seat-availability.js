@@ -3,6 +3,7 @@ import config from 'railyatri/config/environment';
 export default Ember.Controller.extend({
   title: "Seat Availability",
   stations: [],
+  stationList: null,
   actions: {
   	getTimeTable: function(train){
   		var self = this;
@@ -12,6 +13,7 @@ export default Ember.Controller.extend({
   		var api = new RestClient(config.RAILS_SERVER+'/api/time_table/'+train);
       api.get().then(function(data){
         self.set('stations',data[0]);
+        self.set('stationList',data[0]['route']);
         Ember.$.unblockUI();
       });
   	}
