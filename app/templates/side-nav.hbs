@@ -1,14 +1,12 @@
 <div id="drawerExample" class="drawer dw-xs-12 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
-    <div class="drawer-controls">
-        {{!--  <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="btn btn-primary btn-sm">Menu</a> --}}
-    </div>
-    <div class="drawer-contents">
-        <div class="drawer-heading">
+        <div class="drawer-contents">
+        {{!-- <div class="drawer-heading">
             <h2 class="drawer-title">Filter</h2>
-        </div>
+        </div> --}}
         <div class="drawer-body">
-         {{#if filterCheck}}
-            <div class="" >
+            {{!-- {{#if filterCheck}} --}}
+            {{#if false}}
+            <div class="on-filter-popup" >
                 <div class="header-withback">
                     <span class="previous pull-right"><a class="on-filter"  href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" data-remote="true"><i class="fa fa-times" aria-hidden="true"></i></a></span>
                     <p class="text-center">Filters</p>
@@ -16,19 +14,31 @@
                 <form id="filter_form" action="" method="post" data-remote="true">
                     <div class="filter-container filter-data-bus" onclick="">
                         {{filter-data}}
-                        <input type="hidden" name="from_code" value="" />
-                        <input type="hidden" name="to_code" value="" />
-                        <input type="hidden" name="doj" value="" />
-                        <input type="hidden" name="no_of_pass" value="" />
+                        <input type="hidden" name="from_code" value="{{responseData.from_code}}" />
+                        <input type="hidden" name="to_code" value="{{responseData.to_code}}" />
+                        <input type="hidden" name="doj" value="{{responseData.doj}}" />
+                        <input type="hidden" name="no_of_pass" value="{{responseData.num_of_pass}}" />
 
-                        <div class="footer-popup  text-center">
-                            <div class="col-xs-6 cancel-button reset-form">CLEAR FILTER</div>
-                            <div class="col-xs-6 submit-button" type="submit" value="Submit" id="submit-button">APPLY FILTER</div>
+                        <div class="pad-top no-pad">
+                            <button class="col-xs-6 cancel-button reset-form btn  btn-default">CLEAR FILTER</button>
+                            <button class="col-xs-6 submit-button btn btn-primary search-train" id="submit-button">APPLY FILTER</button>
                         </div>
                     </div>
-              </form>
+                </form>
             </div>
+            <div class="clearfix"></div>
+            <div class="pad-bottom"></div>
             {{/if}}
+            <form >
+              <label for="identification">Login</label>
+              {{input id='identification1' class ="form-control" placeholder='Enter Login' value=identification}}
+              <label for="password">Password</label>
+              {{input id='password1' placeholder='Enter Password' class ="form-control" type='password' value=password}}
+              <button class ="btn btn-block btn-primary" {{action 'authenticate' on='submit'}}>Login</button>
+              {{#if errorMessage}}
+                <p>{{errorMessage}}</p>
+              {{/if}}
+</form>
         </div>
     </div>
 </div>

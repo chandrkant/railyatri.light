@@ -32,7 +32,10 @@ var jqueryImages= pickFiles('bower_components/jquery-ui/themes/base/images', {
     srcDir: '/',
     destDir: '/assets/images'
 });
-
+// var EmberWidgets= pickFiles('bower_components/ember-widgets/dist/img', {
+//     srcDir: '/',
+//     destDir: '/assets/images'
+// });
 var app = new EmberApp(defaults, {
     name: require('./package.json').name,
     minifyCSS: {
@@ -44,6 +47,9 @@ var app = new EmberApp(defaults, {
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
 app.import('bower_components/multiselect/css/multi-select.css');
+app.import('bower_components/jquery-ui/jquery-ui.min.js');
+app.import('bower_components/jquery-ui/themes/base/jquery-ui.css');
+app.import('bower_components/jquery-ui/themes/base/jquery.ui.theme.css');
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/bootstrap/js/dropdown.js');
 // Bootstrap form helper
@@ -59,17 +65,16 @@ app.import('bower_components/moment-timezone/builds/moment-timezone-with-data-20
 app.import('bower_components/jstz/jstz.js');
 app.import('bower_components/jquery.cookie/jquery.cookie.js');
 app.import('bower_components/multiselect/js/jquery.multi-select.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.datepicker.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.core.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.widget.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.mouse.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.draggable.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.droppable.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.menu.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.position.js');
-app.import('bower_components/jquery-ui/ui/jquery.ui.autocomplete.js');
-app.import('bower_components/jquery-ui/themes/base/jquery-ui.css');
-app.import('bower_components/jquery-ui/themes/base/jquery.ui.theme.css');
+
+// app.import('bower_components/jquery-ui/ui/jquery.ui.datepicker.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.core.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.widget.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.mouse.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.draggable.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.droppable.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.menu.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.position.js');
+// app.import('bower_components/jquery-ui/ui/jquery.ui.autocomplete.js');
 // pikaday date picker
 app.import('bower_components/pikaday/pikaday.js');
 // Add fullcalendar
@@ -88,8 +93,6 @@ app.import('bower_components/jquery-timepicker-jt/jquery.timepicker.min.js');
 app.import('bower_components/alertifyjs/dist/js/alertify.js');
 app.import('bower_components/alertifyjs/dist/css/alertify.css');
 app.import('bower_components/pluralize/pluralize.js');
-app.import('bower_components/fakeLoader/fakeLoader.min.js');
-app.import('bower_components/fakeLoader/fakeLoader.css');
 app.import('bower_components/blockUI/jquery.blockUI.js');
 app.import('bower_components/another-rest-client/rest-client.js');
 
@@ -99,18 +102,19 @@ app.import('bower_components/hamburger-icon-animate/css/hamburger-icon-animate.c
 app.import('bower_components/hamburger-icon-animate/js/hamburger-icon-animate.js');
 app.import('bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css');
 app.import('bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js');
-
-app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
-  exports: {
-    'ic-ajax': [
-      'default',
-      'defineFixture',
-      'lookupFixture',
-      'raw',
-      'request',
-    ]
-  }
-});
+// app.import('bower_components/ember-widgets/dist/css/ember-widgets.css');
+// app.import('bower_components/ember-widgets/dist/js/ember-widgets.js');
+// app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
+//   exports: {
+//     'ic-ajax': [
+//       'default',
+//       'defineFixture',
+//       'lookupFixture',
+//       'raw',
+//       'request',
+//     ]
+//   }
+// });
 
 //Fix for prduction build issue
 // http://stackoverflow.com/a/25916762

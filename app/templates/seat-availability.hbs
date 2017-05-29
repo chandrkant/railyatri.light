@@ -1,4 +1,4 @@
-{{partial "navbar" title="Home"}}
+{{partial "navbar" }}
 <div class="container-fluid">
 <div class="row bgclr-wht">
   <div class="train-srch-block">
@@ -16,7 +16,7 @@
           <label>From Station</label>
           <span id="train_from_station">
             <select name="from_station" class="live-form-control">
-              <option value=""></option>
+              <option value="">From</option>
               {{#each stations.route as |station|}}
                 {{#if station.stop}}
                  <option value="{{station.station_code}}">{{station.station_name}} </option>
@@ -29,7 +29,7 @@
           <label style="margin-top: 10px;">To Station</label>
           <span id="train_to_station">
             <select name="to_station" class="live-form-control" >
-             <option value=""></option>
+             <option value="">To</option>
               {{#each stations.route as |station|}}
                 {{#if station.stop}}
                  <option value="{{station.station_code}}">{{station.station_name}} </option>
@@ -40,11 +40,11 @@
         </div>
         <div class="col-xs-12">
           <label style="margin-top: 10px;">Boarding Date</label>
-           {{date-picker}}
+           {{date-picker normal=true}}
           <span class="clear_input" title="clear field"><i class="fa fa-remove fa-lg"></i></span>
         </div>
         <div class="col-xs-12 select-station">
-          <div class="col-xs-6 select-station no-pad">
+          <div class="col-xs-6 select-station-pad">
             <label>Class</label>
             <select class="live-form-control" id="journey_class" name="journey_class"><option value="1A">FIRST AC</option>
               <option value="2A">SECOND AC</option>
@@ -73,7 +73,7 @@
           </div>
           <!-- l -->
           <div class="clearfix"></div>
-          <div class="col-xs-12 stn-srch-btn">
+          <div class="col-xs-12 stn-srch-btn select-station">
             <button type="submit" class="btn btn-block">GO</button>
           </div>
           <div class="col-xs-12" style="padding:0 0 70px 15px;">

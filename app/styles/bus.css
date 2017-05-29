@@ -419,7 +419,7 @@ a.main-row {
     font-family: roboto;
 }
 .tab-content{
-    padding-top: 51px;
+    /*padding-top: 51px;*/
 }
 .button-filter-bus a {
     background: url(/assets/images/filter-icon.png) no-repeat center center;
@@ -434,7 +434,7 @@ a.main-row {
     bottom: 20px;
 }
 .on-filter-popup {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     height: 100%;
     width: 100%;
@@ -451,6 +451,7 @@ a.main-row {
     position: absolute;
     overflow-y: scroll;
     height: auto;
+    padding: 0 40px 0 22px;
 }
 .heading-filter-bus {
     font-size: 16px;
@@ -467,15 +468,8 @@ a.main-row {
 }
 .filter-check {
     border: solid 1px #d7d7d7;
-    border-bottom: 0px;
-    border-left: 0px;
-    padding: 5px;
-    cursor: pointer;
-}
-.filter-check {
-    border: solid 1px #d7d7d7;
-    border-bottom: 0px;
-    border-left: 0px;
+   /* border-bottom: 0px;
+    border-left: 0px;*/
     padding: 5px;
     cursor: pointer;
 }
@@ -509,8 +503,30 @@ a.main-row {
     font-size: 14px !important;
     font-weight: normal;
 }
-.drawer-controls {
-
-     /*margin-right: -3%;*/
-
+.on-filter-popup .header-withback {
+    /*background: #363636;*/
+    color: #fff;
+    padding: 10px;
+}
+.drawer-contents {
+    background-color: #FFF;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+button#submit-button {
+    border-radius: 0px;
+}
+button.reset-form{
+  border-radius: 0px;   
+}
+.pad-top{
+    margin-top: 25px;
+}
+.row-body-dt .selected_dt {
+    background: #1079d7;
+    color: #fff;
+}
+.container-fluid .bgclr-wht ul li{
+    list-style: none;
 }

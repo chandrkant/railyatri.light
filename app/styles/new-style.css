@@ -1358,9 +1358,9 @@ padding: 4em 0 0 0;
 .cust-padd{
   padding: 3px 16px 11px;
 }
-.fold.dw-xs-12 {
+/*.fold.dw-xs-12 {
     margin-left: -116%;
-}
+}*/
 #bus-search-form .tab-content {
     color: #fff;
     padding: 15px;
@@ -1582,7 +1582,7 @@ div.humburgar {
 #mainDiv{
   padding-top: 50px;
 }
-.live-form-control {
+ .live-form-control:active .live-form-control:focus {
     display: block;
     width: 100%;
     height: 34px;
@@ -1593,6 +1593,18 @@ div.humburgar {
     background-color: #fff;
     border: 0;
     border-bottom: 1px solid #898989;
+}
+.live-form-control{
+display: block;
+width: 100%;
+height: 34px;
+padding: 0px 0px;
+font-size: 18px;
+line-height: 1.42857143;
+color: #000;
+background-color: #fff;
+border: 0;
+border-bottom: 1px solid #898989;
 }
 .select-station .live-form-control {
     font-size: 18px;
@@ -1608,5 +1620,14 @@ div.humburgar {
     color: #363636;
     margin-bottom: 8px;
     font-size: 16px;
+}
+.select-station{
+  padding-top: 16px;
+}
+.select-station-pad{
+  padding: 16px 2px 2px 2px;
+}
+.ui-datepicker{
+  z-index: 999 !important;
 }
 /************************* seat-availaibility ends /**************************/

@@ -19,7 +19,7 @@ export default Ember.Component.extend({
         minLength: 3,
         source: function(request, response) {
             // var loadingElement = $(this)[0]["element"].siblings();
-            // $(loadingElement).show();            
+            // $(loadingElement).show();
             if (request.term.length <= 3 || search_list.length === 0) {
 
                 $.ajax({
@@ -41,10 +41,10 @@ export default Ember.Component.extend({
         },
         select: function(event, ui) {
             $(this).removeClass("ui-autocomplete-loading");
-            $(this).val(ui.item.value); 
-            if($("#picker").val()=="1"){
+            $(this).val(ui.item.value);
+            if($("#picker").val()==="1"){
                self.sendAction('actionName', ui.item.number);
-            } 
+            }
             $(this).next().next().css('display', 'block');
 
         }
@@ -82,7 +82,7 @@ function get_local_filter_list(term) {
     local_search_list.length = 0;
     var code,name,change='';
     search_list.filter(function(list) {
-        code = list.code; 
+        code = list.code;
         name = list.name;
         change = list.change;
         if (code.search(term) >= 0 || name.search(term) >= 0 || change.search(term) >= 0) {
@@ -91,6 +91,3 @@ function get_local_filter_list(term) {
     });
     return local_search_list;
 }
-
-
-    

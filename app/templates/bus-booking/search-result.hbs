@@ -1,4 +1,4 @@
-{{partial "navbar"  title="Live Arr/Dep"}}
+{{partial "navbar"}}
 <div class="container-fluid bgclr-wht">
 <div class="tab-content clearfix">
 <div class="bb-fixed-row">
@@ -14,13 +14,14 @@
   </div>
 
   <div class="row bb-2nd-row text-center">
-    <div onclick="sort_function('duration',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4 "><i class="fa fa-clock-o" aria-hidden="true"></i> Duration <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
-    <div onclick="sort_function('deptime',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4"><i class="fa fa-flag-o" aria-hidden="true"></i> Dep Time <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
-    <div onclick="sort_function('fare',this)" style="text-align:left; font-size:13px;" class="asc col-xs-4 default_sorted"><i class="fa fa-inr" aria-hidden="true"></i> Bus fare <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></div>
+    <div onclick="" style="text-align:left; font-size:13px;" class="asc col-xs-4 "><a class="asc " {{action 'sort' 'duration' this}}><i class="fa fa-clock-o" aria-hidden="true"></i> Duration <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></a></div>
+    <div onclick="" style="text-align:left; font-size:13px;" class="asc col-xs-4"><a class="asc " {{action 'sort' 'deptime' this}}><i class="fa fa-flag-o" aria-hidden="true"></i> Dep Time <i class="sorting-icon fa fa-angle-down" aria-hidden="true"></i></a></div>
+    <div onclick="" style="text-align:left; font-size:13px;" class="asc col-xs-4 default_sorted"><a class="asc" {{action 'sort' 'fare' this}}><i class="fa fa-inr" aria-hidden="true"></i> Bus fare <i class="sorting-icon fa fa-angle-down" aria-hidden="true"> </i></a></div>
   </div>
 </div>
  <div class="container-fluid bgclr-wht">
- {{#each availableTrips as |trip| }}
+ {{page-numbers content=pagedContent showFL=true}}
+ {{#each pagedContent as |trip| }}
   <a class="main-row rippler rippler-inverse" data-duration="{{trip.durationTime}}" data-fare="{{trip.fareDetails.0.baseFare}}" data-deptime="{{trip.departure_time}}" href="/bus-booking/operator-detail/{{responseData.num_of_pass}}/{{trip.id}}/{{trip.operator}}">
     <div class="row heading-bus-mobile">
       <div class="col-xs-6 text-left dpitem"> {{trip.arrivalTime}} &rarr; {{trip.departureTime}}
@@ -30,9 +31,9 @@
       </div>
       <div class="col-xs-6 text-right bus-fare" >&#x20B9; {{trip.fareDetails.0.baseFare }}</div>
     </div>
-    <div class="col-xs-6 bus-time"><i class="fa fa-clock-o" aria-hidden="true"></i> {{sta-time trip.durationTime}}</div>
+    <div class="col-xs-6 bus-time no-pad"><i class="fa fa-clock-o" aria-hidden="true"></i> {{sta-time "0"  "0" trip.durationTime 'bus'}}</div>
     <div class="col-xs-6 text-right number-seats">{{trip.availableSeats}} Seats</div>
-    <div class="col-xs-12 truncate-bus bus-travels">{{trip.travels}}</div>
+    <div class="col-xs-12 truncate-bus bus-travels no-pad">{{trip.travels}}</div>
     <div class="row">
       <div class="col-xs-12 text-left travels-details">{{trip.busType}}</div>
     </div>
@@ -41,6 +42,7 @@
 </div>
 </div>
 </div>
+
 <div class="navbar navbar-fixed-bottom button-filter-bus">
     <a href="javascript:void(0)" class="on-filter"  href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample">Filter</a>
 </div>
