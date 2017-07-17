@@ -1,0 +1,33 @@
+    <div class="row seat-layout-drawer">
+    	<div class="col-xs-12">
+      {{partial 'legend'}}
+		{{#if upper}}
+		<ul class="nav nav-tabs">
+		  <li class="active"><a data-toggle="tab" href="#mobile_lower">LOWER</a></li>
+		  <li><a data-toggle="tab" href="#mobile_upper">UPPER</a></li>
+		</ul>
+		{{/if}}
+		<div class="tab-content">
+		  <div id="mobile_lower" class="tab-pane fade in active">
+		    {{partial 'lower-berth'}}
+		  </div>
+		  {{#if upper}}
+		  <div id="mobile_upper" class="tab-pane fade">
+		   {{partial 'upper-berth'}}
+		  </div>
+		  {{/if}}
+		</div> 
+
+		<div id="suggested_seats" data-suggestedseats="{{currentTripDetails.suggested_seats}}"></div>
+		<div id="no_of_passengers" data-passengers="{{responseData.num_of_pass}}">
+		</div>		
+    	</div>
+    </div>
+     <div class="footer-popup navbar-fixed-bottom text-center open-seat">
+        <div class="col-xs-8 seat-number-selected">
+          <span id="seat-on-select-fare"></span>
+          <span>Seat No:</span> 
+          <span id="seat-on-select"></span>
+        </div>
+        <div class="col-xs-4 seat-button"><span>Confirm Seat</span></div>
+     </div>

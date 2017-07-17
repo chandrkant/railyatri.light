@@ -41,7 +41,7 @@ var app = new EmberApp(defaults, {
     minifyCSS: {
       enabled: true,
       options: {}
-    }
+    },
   });
 
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');

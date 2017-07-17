@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    // BACKEND: process.env['RAILS_SERVER'] || 'NOTDEFINED',
     modulePrefix: 'railyatri',
     environment: environment,
     rootURL: '/',
@@ -17,9 +18,17 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+       // when it is created
+      NAMESPACE: 'api/v1',
+      LOGIN_URI: '/users/sign_in',
+      REGISTER_URI: '/users',
+      HOST: '',
+      // BACKEND: BACKEND,
+      environment: environment
+    },
+    'simple-auth': {
+        authorizer: 'simple-auth-authorizer:devise'
+    },
   };
 
   if (environment === 'development') {
@@ -28,12 +37,16 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.RAILS_SERVER ="";
+    ENV.apiURL = 'http://127.0.0.1:3000';
     ENV['ember-cli-styles-reloader'] = {
      animateChanges: true
     };
   }
-
   if (environment === 'test') {
     // Testem prefers this...
     ENV.RAILS_SERVER ="";
@@ -50,7 +63,12 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.RAILS_SERVER ="https://railyatrilight.herokuapp.com";
+    ENV.apiURL = 'https://railyatrilight.herokuapp.com';
   }
-
+  // ENV['simple-auth-devise'] = {
+  //   serverTokenEndpoint:  ENV.RAILS_SERVER + ENV.APP.LOGIN_URI,
+  //   resourceName: 'user'
+  // };
+  
   return ENV;
 };

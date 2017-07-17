@@ -20,9 +20,9 @@
   </div>
 </div>
  <div class="container-fluid bgclr-wht">
- {{page-numbers content=pagedContent showFL=true}}
- {{#each pagedContent as |trip| }}
-  <a class="main-row rippler rippler-inverse" data-duration="{{trip.durationTime}}" data-fare="{{trip.fareDetails.0.baseFare}}" data-deptime="{{trip.departure_time}}" href="/bus-booking/operator-detail/{{responseData.num_of_pass}}/{{trip.id}}/{{trip.operator}}">
+ {{#each availableTrips as |trip| }}
+  {{!-- <a class="main-row rippler rippler-inverse" data-duration="{{trip.durationTime}}" data-fare="{{trip.fareDetails.0.baseFare}}" data-deptime="{{trip.departure_time}}" href="/bus-booking/operator-detail/{{responseData.num_of_pass}}/{{trip.id}}/{{trip.operator}}"> --}}
+  <a class="main-row rippler rippler-inverse" data-duration="{{trip.durationTime}}" data-fare="{{trip.fareDetails.0.baseFare}}" data-deptime="{{trip.departure_time}}" {{action 'getTripDetails' trip}} >
     <div class="row heading-bus-mobile">
       <div class="col-xs-6 text-left dpitem"> {{trip.arrivalTime}} &rarr; {{trip.departureTime}}
       {{#if trip.mTicketEnabled}}
@@ -42,7 +42,6 @@
 </div>
 </div>
 </div>
-
 <div class="navbar navbar-fixed-bottom button-filter-bus">
     <a href="javascript:void(0)" class="on-filter"  href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample">Filter</a>
 </div>

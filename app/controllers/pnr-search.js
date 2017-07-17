@@ -8,14 +8,13 @@ export default Ember.Controller.extend({
       var pnr_number = Ember.$("#pnr-number").val();
       var cpt =  Ember.$("#captcha-value").val();
       var url = "http://www.indianrail.gov.in/enquiry/CommonCaptcha?inputCaptcha="+cpt+"&inputPnrNo="+pnr_number+"&inputPage=PNR&callback=?";
-      $.ajax({
+      Ember.$.ajax({
          dataType :"jsonp",
          url: url,
-         success: function(data){
+         success: function(){
 
          },
-         error: function(data,status,xhr){
-          debugger
+         error: function(){
             // this.transitionToRoute('pnr-result',pnr_number);
         var api = new RestClient(config.RAILS_SERVER+"/api/pnr_status");
         var data = {url: this.url};
@@ -25,7 +24,7 @@ export default Ember.Controller.extend({
             console.log(xhr);   //XMLHtppRequest instance
         });
          }
-      })
+      });
       
       try{
        

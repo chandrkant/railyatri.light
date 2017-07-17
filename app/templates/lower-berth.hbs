@@ -1,0 +1,24 @@
+<div id="lower" class="">
+  <div class="_21yR"></div>
+  <div>
+    <div class="_11ZK ZUCx">Lower</div>    
+  </div>
+  <div class="seats_row">
+  {{#each currentTripDetails.row_hash as |i| }}
+  {{#if (data-present currentTripDetails.lower i)}}
+      <div class="col-xs-2 seats_row_spc">
+        {{#each (current-row currentTripDetails.lower i) as |seat|}} 
+          <div class="{{seat.css_1}}" data-hover="{{seat.hover_text}}" data-seat="{{parse-json seat}}">
+            <div class="{{seat.css_2}}">
+                  <span class="seat-name">{{seat.name}}</span>
+                  <span class="{{seat.span_1}}"></span>
+                  <span class="{{seat.span_2}}"></span>
+                  <span class="_19QY _1Zjt"></span>
+          </div>
+          </div>
+          {{/each}}
+    </div>
+  {{/if}}
+  {{/each}}
+  </div>
+</div>

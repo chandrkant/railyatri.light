@@ -1,8 +1,9 @@
 <div id="drawerExample" class="drawer dw-xs-12 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
         <div class="drawer-contents">
-        {{!-- <div class="drawer-heading">
-            <h2 class="drawer-title">Filter</h2>
-        </div> --}}
+       <div class="header-withback">
+            <span class="previous pull-right"><a class="on-filter"  href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" data-remote="true"><i class="fa fa-times" aria-hidden="true"></i></a></span>
+            <p class="text-center">{{titleText}} </p>
+        </div>
         <div class="drawer-body">
             {{!-- {{#if filterCheck}} --}}
             {{#if false}}
@@ -11,7 +12,7 @@
                     <span class="previous pull-right"><a class="on-filter"  href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" data-remote="true"><i class="fa fa-times" aria-hidden="true"></i></a></span>
                     <p class="text-center">Filters</p>
                 </div>
-                <form id="filter_form" action="" method="post" data-remote="true">
+               {{!--  <form id="filter_form" action="" method="post" data-remote="true"> --}}
                     <div class="filter-container filter-data-bus" onclick="">
                         {{filter-data}}
                         <input type="hidden" name="from_code" value="{{responseData.from_code}}" />
@@ -24,21 +25,27 @@
                             <button class="col-xs-6 submit-button btn btn-primary search-train" id="submit-button">APPLY FILTER</button>
                         </div>
                     </div>
-                </form>
+                {{!-- </form> --}}
             </div>
             <div class="clearfix"></div>
             <div class="pad-bottom"></div>
             {{/if}}
-            <form >
+            {{#if false}}
+            <form  {{action 'authenticate' on='submit'}}>
               <label for="identification">Login</label>
-              {{input id='identification1' class ="form-control" placeholder='Enter Login' value=identification}}
+              {{input  class ="form-control" placeholder='Enter Login' value=identification}}
               <label for="password">Password</label>
-              {{input id='password1' placeholder='Enter Password' class ="form-control" type='password' value=password}}
-              <button class ="btn btn-block btn-primary" {{action 'authenticate' on='submit'}}>Login</button>
+              {{input  placeholder='Enter Password' class ="form-control" type='password' value=password}}
+              <button class ="btn btn-block btn-primary">Login</button>
               {{#if errorMessage}}
                 <p>{{errorMessage}}</p>
               {{/if}}
-</form>
+            </form>
+            {{/if}}
+            {{!-- seat layout --}}
+            {{#if showLayout}}
+            {{seat-layout currentTripDetails=currentTripDetails responseData=responseData upper = upper}}
+            {{/if}}
         </div>
     </div>
 </div>
