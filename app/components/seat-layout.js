@@ -7,11 +7,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	didInsertElement: function() {
 		Ember.run.scheduleOnce('afterRender', this, function() {
-			$('#drawerExample').on('drawer.closed', function(){$('.open-seat').hide();});
+			// debugger
 			$suggested_seats = $("#suggested_seats").data('suggestedseats');
 			$no_passengers   =  $("#no_of_passengers").data('passengers');
-			$suggested_seats_lng =$suggested_seats.split(',').length;
-			$suggested_seats = $suggested_seats.split(',');
+			$suggested_seats_lng =$suggested_seats.toString().split(',').length;
+			$suggested_seats = $suggested_seats.toString().split(',');
 			if ($suggested_seats_lng===0){
   		 $suggested_seats_lng = $no_passengers;
   	  } 
